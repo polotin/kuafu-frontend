@@ -6,16 +6,14 @@
                 temporary>
             <v-list
                     nav
-                    dense
-            >
-                <v-list-item-group active-class="deep-purple--text text--accent-4"
-                >
+                    dense>
+                <v-list-item-group active-class="deep-purple--text text--accent-4">
                     <v-list-item>
-                        <v-list-item-title>Home</v-list-item-title>
+                        <v-list-item-title @click.stop="backHome">Home</v-list-item-title>
                     </v-list-item>
 
                     <v-list-item>
-                        <v-list-item-title @click="toWiki">wiki</v-list-item-title>
+                        <v-list-item-title @click.stop="toWiki">wiki</v-list-item-title>
                     </v-list-item>
 
                     <v-list-item>
@@ -47,8 +45,17 @@
                 drawer: false,
             }
         },
-        methods: {toWiki(){
-            this.$router.push('/wiki')
-            }}
+        methods: {
+            backHome() {
+                this.$router.push({
+                    path: '/',
+                })
+            },
+            toWiki() {
+                this.$router.push({
+                    path: '/wiki',
+                })
+            }
+        }
     };
 </script>

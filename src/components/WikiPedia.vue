@@ -1,15 +1,10 @@
 <template>
     <v-tabs>
-        <v-tab href="tab-1">维基百科 demo</v-tab>
-
-        <v-tab-item value="tab-1">
-            <v-container>
-                <v-text-field placeholder="请输入查询内容" v-model="keyword"></v-text-field>
-                <v-btn @click.stop="findPoems">搜索</v-btn>
-                <p>{{result}}</p>
-            </v-container>
-        </v-tab-item>
-
+        <v-container>
+            <v-text-field placeholder="请输入查询内容" v-model="keyword"></v-text-field>
+            <v-btn @click.stop="findPoems">搜索</v-btn>
+            <p>{{result}}</p>
+        </v-container>
     </v-tabs>
 </template>
 

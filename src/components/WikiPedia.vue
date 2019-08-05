@@ -1,11 +1,9 @@
 <template>
-    <v-tabs>
-        <v-container>
-            <v-text-field placeholder="请输入查询内容" v-model="keyword"></v-text-field>
-            <v-btn @click.stop="findPoems">搜索</v-btn>
-            <p>{{result}}</p>
-        </v-container>
-    </v-tabs>
+    <v-container>
+        <v-text-field placeholder="请输入查询内容" v-model="keyword"></v-text-field>
+        <v-btn @click.stop="findWiki">搜索</v-btn>
+        <p>{{result}}</p>
+    </v-container>
 </template>
 
 <script>
@@ -20,9 +18,9 @@
             }
         },
         methods: {
-            findPoems() {
+            findWiki() {
                 let self = this;
-                let url = 'https://www.kuafu.online/poems';
+                let url = 'https://www.kuafu.online/wiki';
 
                 axios.post(url, {
                     keyword: self.keyword

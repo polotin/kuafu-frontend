@@ -35,7 +35,7 @@
 
 
         <v-content>
-            <home-component/>
+            <wiki-pedia/>
         </v-content>
     </v-app>
 </template>

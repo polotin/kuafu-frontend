@@ -1,57 +1,35 @@
 <template>
-
-    <v-tabs>
-        <v-tab href="tab-poems">查询demo</v-tab>
-        <v-tab>chart demo</v-tab>
-        <v-tab href="tab-wiki">维基百科 demo</v-tab>
-
-        <v-tab-item value="tab-poems">
-            <v-container>
-                <v-text-field placeholder="请输入查询内容" v-model="keyword"></v-text-field>
-                <v-btn @click.stop="findPoems">搜索</v-btn>
-                <p>{{result}}</p>
-            </v-container>
+    <v-tabs grow>
+        <v-tab key="tab-poems">词韵</v-tab>
+        <v-tab>Chart</v-tab>
+        <v-tab key="tab-wiki">维基百科</v-tab>
+        <v-tab-item key="tab-poems">
+            <poem-component/>
         </v-tab-item>
 
-        <v-tab-item value="tab-wiki">
+        <v-tab-item>
+            s
+        </v-tab-item>
+
+        <v-tab-item key="tab-wiki">
             <wiki-pedia></wiki-pedia>
         </v-tab-item>
     </v-tabs>
-
-
 </template>
 
 <script>
-    import axios from 'axios';
     import WikiPedia from "./WikiPedia";
+    import PoemComponent from "./PoemComponent";
 
     export default {
         name: "HomeComponent",
-        components: {WikiPedia},
+        components: {PoemComponent, WikiPedia},
         data() {
             return {
-                keyword: null,
-                result: ''
+                grow: true
             }
         },
-        methods: {
-            findPoems() {
-                let self = this;
-                let url = 'https://www.kuafu.online/poems';
-
-                axios.post(url, {
-                    keyword: self.keyword
-                })
-                    .then(res => {
-                        let data = res.data;
-                        self.result = data;
-                        console.log(data);
-                    })
-                    .catch(e => {
-                        console.log(e);
-                    })
-            }
-        }
+        methods: {}
     }
 </script>
 

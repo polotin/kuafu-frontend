@@ -15,7 +15,7 @@
                     </v-list-item>
 
                     <v-list-item>
-                        <v-list-item-title  @click.stop="toWiki">wiki</v-list-item-title>
+                        <v-list-item-title @click.stop="toWiki">wiki</v-list-item-title>
                     </v-list-item>
 
                     <v-list-item>
@@ -35,7 +35,6 @@
 
 
         <v-content>
-            <home-component/>
         </v-content>
     </v-app>
 </template>

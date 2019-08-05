@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    import HomeComponent from "@/components/HomeComponent";
+    import HomeComponent from "../components/HomeComponent";
 
     export default {
         components: {HomeComponent},

@@ -6,5 +6,9 @@ Vue.use(Vuetify);
 export default new Vuetify({
   icons: {
     iconfont: 'mdi',
+    values: {
+      books: 'mdi-library-books',
+      wiki: 'mdi-chart-donut',
+    },
   },
 });

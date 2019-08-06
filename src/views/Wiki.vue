@@ -8,14 +8,19 @@
                     nav
                     dense
             >
-                <v-list-item-group active-class="deep-purple--text text--accent-4"
-                >
+                <v-list-item-group active-class="deep-purple--text text--accent-4">
                     <v-list-item>
-                        <v-list-item-title @click.stop="backHome">Home</v-list-item-title>
+                        <v-list-item-title @click.stop="backHome">
+                            <v-icon small>$vuetify.icons.books</v-icon>
+                            &nbsp;&nbsp;Home
+                        </v-list-item-title>
                     </v-list-item>
 
                     <v-list-item>
-                        <v-list-item-title  @click.stop="toWiki">wiki</v-list-item-title>
+                        <v-list-item-title @click.stop="toWiki">
+                            <v-icon small>$vuetify.icons.wiki</v-icon>
+                            &nbsp;&nbsp;wiki
+                        </v-list-item-title>
                     </v-list-item>
 
                     <v-list-item>

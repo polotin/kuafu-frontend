@@ -12,22 +12,59 @@
         </v-container>
 
         <v-container>
-            <p class="display-1 text--primary">{{wiki.title}}</p>
-            <p>
-                <span v-for="(category, cIndex) in wiki.categories" :key="cIndex" style="color: dodgerblue;">
-                    #{{category}}&nbsp;
-                </span>
-            </p>
-            <p>
-                {{wiki['summary']}}
-            </p>
-            <div>
-                <v-carousel v-if="wiki.image != null && wiki.image.length > 0" hide-delimiters >
-                    <v-carousel-item
-                            v-for="(imgSrc, imgIndex) in wiki.image" :key="imgIndex" :src="imgSrc">
-                    </v-carousel-item>
-                </v-carousel>
-            </div>
+            <v-card
+                    class="mx-auto"
+                    width="100%"
+            >
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title class="headline">{{wiki.title}}</v-list-item-title>
+                        <v-list-item-subtitle>
+                            <span v-for="(category, cIndex) in wiki.categories" :key="cIndex"
+                                  style="color: dodgerblue;">
+                                #{{category}}&nbsp;
+                            </span>
+                        </v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <div>
+                    <v-carousel v-if="wiki.image != null && wiki.image.length > 0" hide-delimiters height="100%">
+                        <v-carousel-item
+                                v-for="(imgSrc, imgIndex) in wiki.image" :key="imgIndex">
+                            <v-img :aspect-ratio="16/9" :src="imgSrc">
+                            </v-img>
+                        </v-carousel-item>
+                    </v-carousel>
+                </div>
+
+                <v-card-text v-html="wiki['summary']">
+<!--                    {{wiki['summary']}}-->
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-btn
+                            text
+                            color="deep-purple accent-4"
+                    >
+                        Read
+                    </v-btn>
+                    <v-btn
+                            text
+                            color="deep-purple accent-4"
+                    >
+                        Bookmark
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                        <v-icon>mdi-share-variant</v-icon>
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+
         </v-container>
 
         <!--<v-dialog v-model="dialog" width="100%">-->

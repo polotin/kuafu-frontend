@@ -14,9 +14,9 @@
         <v-container class="poem-card" v-for="(poem, index) in result" :key="index" @click.stop="showPoem(poem)">
             <v-card width="100%">
                 <v-card-text>
-                    <div>{{poem.Author}}</div>
+                    <div></div>
                     <p class="title text--primary">{{poem.Title}}</p>
-                    <p>{{poem.Dynasty}}</p>
+                    <p>[{{poem.Dynasty}}] {{poem.Author}}</p>
                     <p>
                         <span v-for="(clause, clauseIndex) in poem.Clauses" :key="clauseIndex">
                             <span v-if="clause.indexOf(keyword) != -1">

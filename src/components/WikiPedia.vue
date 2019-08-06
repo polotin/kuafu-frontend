@@ -32,14 +32,20 @@
                     <v-carousel v-if="wiki.image != null && wiki.image.length > 0" hide-delimiters height="100%">
                         <v-carousel-item
                                 v-for="(imgSrc, imgIndex) in wiki.image" :key="imgIndex">
-                            <v-img :aspect-ratio="16/9" :src="imgSrc">
+                            <v-img :aspect-ratio="16/9" :src="imgSrc" :contain="true" >
                             </v-img>
                         </v-carousel-item>
                     </v-carousel>
+                    <v-carousel v-else hide-delimiters :show-arrows="false" height="100%">
+                        <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+                        </v-img>
+                    </v-carousel>
                 </div>
 
-                <v-card-text v-html="wiki['summary']">
-<!--                    {{wiki['summary']}}-->
+                <v-card-text style="text-align: justify; text-indent: 2em;">
+                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">
+                        {{paragraph}}
+                    </p>
                 </v-card-text>
 
                 <v-card-actions>
@@ -108,7 +114,7 @@
             findWiki() {
                 let self = this;
                 self.showProgressing = true;
-                let url = 'https://www.kuafu.online/wiki';
+                let url = 'http://127.0.0.1:5000/wiki';
                 axios.post(url, {
                     keyword: self.keyword
                 })

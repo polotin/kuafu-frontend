@@ -114,7 +114,7 @@
             findWiki() {
                 let self = this;
                 self.showProgressing = true;
-                let url = 'http://127.0.0.1:5000/wiki';
+                let url = 'https://www.kuafu.online/wiki';
                 axios.post(url, {
                     keyword: self.keyword
                 })

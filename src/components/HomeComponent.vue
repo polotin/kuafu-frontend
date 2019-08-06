@@ -8,7 +8,7 @@
         </v-tab-item>
 
         <v-tab-item>
-            s
+            <chart-demo></chart-demo>
         </v-tab-item>
 
         <v-tab-item key="tab-wiki">
@@ -20,10 +20,11 @@
 <script>
     import WikiPedia from "./WikiPedia";
     import PoemComponent from "./PoemComponent";
+    import ChartDemo from "./ChartDemo";
 
     export default {
         name: "HomeComponent",
-        components: {PoemComponent, WikiPedia},
+        components: {PoemComponent, WikiPedia, ChartDemo},
         data() {
             return {
                 grow: true

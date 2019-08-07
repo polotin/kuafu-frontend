@@ -9,7 +9,7 @@ export default new Vuetify({
         values: {
             books: 'mdi-library-books',
             wiki: 'mdi-chart-donut',
-            myth: 'mdi-view-headline'
+            myth: 'mdi-card-bulleted-settings-outline',
         },
     },
 });

@@ -6,6 +6,7 @@
                 temporary>
             <navigation-drawer @hideIfNotLeave="hideIfNotLeave"/>
         </v-navigation-drawer>
+
         <v-app-bar app dense color="#1E90FF">
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>首页</v-toolbar-title>

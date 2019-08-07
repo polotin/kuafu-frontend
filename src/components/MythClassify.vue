@@ -81,12 +81,14 @@
         "indigo", "blue", "light-blue", "cyan", "teal",
         "green", "light-green", "lime", "amber", "orange",
         "deep-orange", "brown", "blue-grey", "grey"];
-    let myth_periods = ["开辟篇","黄炎篇","尧舜篇","羿禹篇","夏殷篇","周秦篇"];
+    let myth_periods = ["开辟篇", "黄炎篇", "尧舜篇", "羿禹篇", "夏殷篇", "周秦篇"];
+    let pics = [require('../assets/myth_period4.jpg'), require('../assets/myth_period1.jpg'), require('../assets/myth_period5.jpg'),
+        require('../assets/myth_period2.jpg'), require('../assets/myth_period6.jpg'), require('../assets/myth_period3.jpg')];
     let items = [];
     for (let i = 0; i < myth_periods.length; i++) {
         let item = {
             color: material_colors[i],
-            src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
+            src: pics[i],
             title: myth_periods[i],
             artist: 'A Tale As Old As Time'
         };

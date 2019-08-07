@@ -8,24 +8,24 @@
         </v-navigation-drawer>
         <v-app-bar app dense color="#1E90FF">
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>夸父-百科</v-toolbar-title>
+            <v-toolbar-title>夸父-神话</v-toolbar-title>
         </v-app-bar>
 
         <v-content>
-            <wiki-pedia/>
+            <myth-component/>
         </v-content>
     </v-app>
 </template>
 
 <script>
-    import WikiPedia from "@/components/WikiPedia";
     import NavigationDrawer from "../components/NavigationDrawer";
-
+    import MythComponent from "../components/MythComponent";
     export default {
-        components: {NavigationDrawer, WikiPedia},
+        name: "Myth",
+        components: {MythComponent, NavigationDrawer},
         data() {
             return {
-                drawer: false,
+                drawer: false
             }
         },
         methods: {
@@ -33,5 +33,9 @@
                 this.drawer = false;
             }
         }
-    };
+    }
 </script>
+
+<style scoped>
+
+</style>

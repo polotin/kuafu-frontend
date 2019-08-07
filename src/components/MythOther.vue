@@ -54,15 +54,11 @@
                 rows: 3,
                 colors: material_colors,
                 color_num: material_colors.length - 1,
-                bg_image: "./img/interlaced.png"
             }
         },
     }
 </script>
 
 <style scoped>
-    .v-card {
-        background-repeat: repeat;
-        background-size: initial;
-    }
+
 </style>

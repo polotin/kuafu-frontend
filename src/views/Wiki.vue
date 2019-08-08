@@ -2,7 +2,7 @@
     <v-app>
         <v-navigation-drawer
                 v-model="drawer"
-                absolute
+                app
                 temporary>
             <navigation-drawer @hideIfNotLeave="hideIfNotLeave"/>
         </v-navigation-drawer>

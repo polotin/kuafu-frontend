@@ -1,5 +1,5 @@
 <template>
-    <v-content>
+    <v-container fluid>
         <v-list-item>
             <v-list-item-content>
                 <v-list-item-title class="title">
@@ -17,7 +17,7 @@
                 nav
                 dense>
             <v-list-item-group active-class="deep-purple--text text--accent-4">
-                <v-list-item @click.stop="backHome">
+                <v-list-item to="/">
                     <v-list-item-icon>
                         <v-icon>$vuetify.icons.books</v-icon>
                     </v-list-item-icon>
@@ -26,7 +26,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item @click.stop="toWiki">
+                <v-list-item to="/wiki">
                     <v-list-item-icon>
                         <v-icon>$vuetify.icons.wiki</v-icon>
                     </v-list-item-icon>
@@ -35,7 +35,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item @click.stop="toMyth">
+                <v-list-item to="/myth">
                     <v-list-item-icon>
                         <v-icon>$vuetify.icons.myth</v-icon>
                     </v-list-item-icon>
@@ -45,7 +45,28 @@
                 </v-list-item>
             </v-list-item-group>
         </v-list>
-    </v-content>
+
+        <v-divider></v-divider>
+
+        <v-list
+                nav
+                dense>
+
+            <v-list-item>
+                <!--                <v-list-item-icon>-->
+                <!--                    <v-icon>$vuetify.icons.reference</v-icon>-->
+                <!--                </v-list-item-icon>-->
+                <v-list-item-content>
+                    <v-list-item-title>Reference</v-list-item-title>
+                    <v-list-item-subtitle style="margin-top: 10px">《中国神话史》</v-list-item-subtitle>
+                    <v-list-item-subtitle>《中国神话传说》</v-list-item-subtitle>
+                    <v-list-item-subtitle>《中国神话通论》</v-list-item-subtitle>
+                </v-list-item-content>
+            </v-list-item>
+
+        </v-list>
+
+    </v-container>
 </template>
 
 <script>
@@ -54,29 +75,31 @@
         data() {
             return {}
         },
-        methods: {
-            backHome() {
-                this.$router.push({
-                    path: '/',
-                });
-                this.$emit('hideIfNotLeave')
-            },
-            toWiki() {
-                this.$router.push({
-                    path: '/wiki',
-                });
-                this.$emit('hideIfNotLeave')
-            },
-            toMyth() {
-                this.$router.push({
-                    path: '/myth',
-                });
-                this.$emit('hideIfNotLeave')
-            }
-        }
+        // methods: {
+        //     backHome() {
+        //         this.$router.push({
+        //             path: '/',
+        //         });
+        //         this.$emit('hideIfNotLeave')
+        //     },
+        //     toWiki() {
+        //         this.$router.push({
+        //             path: '/wiki',
+        //         });
+        //         this.$emit('hideIfNotLeave')
+        //     },
+        //     toMyth() {
+        //         this.$router.push({
+        //             path: '/myth',
+        //         });
+        //         this.$emit('hideIfNotLeave')
+        //     }
+        // }
     }
 </script>
 
 <style scoped>
-
+.v-list-item__subtitle{
+    margin-bottom: 5px;
+}
 </style>

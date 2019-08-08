@@ -1,44 +1,48 @@
 <template>
-    <v-item-group mandatory>
-        <v-container grid-list-md>
-            <v-layout wrap v-for="r in rows"
-                      :key="r">
-                <v-flex
-                        v-for="n in 3"
-                        :key="n"
-                        xs4
-                        md4
-                >
-                    <v-item v-slot:default="{ active, toggle }">
-                        <v-card
-                                img="./img/fabric.png"
-                                :color="active ? 'primary' : colors[Math.round(Math.random()*(color_num-1))]"
-                                class="d-flex align-center"
-                                style="background-repeat: repeat; background-size: initial;"
-                                height="100"
-                                @click="toggle"
+    <v-container>
+        <v-card>
+            <v-item-group mandatory>
+                <v-container grid-list-md>
+                    <v-layout wrap v-for="r in rows"
+                              :key="r">
+                        <v-flex
+                                v-for="n in 3"
+                                :key="n"
+                                xs4
+                                md4
                         >
-                            <v-scroll-y-transition>
-                                <div
-                                        v-if="active"
-                                        style="color: white"
-                                        class="font-weight-bold flex-grow-1 text-center"
+                            <v-item v-slot:default="{ active, toggle }">
+                                <v-card
+                                        img="./img/fabric.png"
+                                        :color="active ? 'primary' : colors[Math.round(Math.random()*(color_num-1))]"
+                                        class="d-flex align-center"
+                                        style="background-repeat: repeat; background-size: initial;"
+                                        height="100"
+                                        @click="toggle"
                                 >
-                                    {{story[3*(r-1) + n-1]}}
-                                </div>
-                                <v-card-text
-                                        v-else
-                                        class="flex-grow-1 text-center"
-                                >
-                                    {{story[3*(r-1) + n-1]}}
-                                </v-card-text>
-                            </v-scroll-y-transition>
-                        </v-card>
-                    </v-item>
-                </v-flex>
-            </v-layout>
-        </v-container>
-    </v-item-group>
+                                    <v-scroll-y-transition>
+                                        <div
+                                                v-if="active"
+                                                style="color: white"
+                                                class="font-weight-bold flex-grow-1 text-center"
+                                        >
+                                            {{story[3*(r-1) + n-1]}}
+                                        </div>
+                                        <v-card-text
+                                                v-else
+                                                class="flex-grow-1 text-center"
+                                        >
+                                            {{story[3*(r-1) + n-1]}}
+                                        </v-card-text>
+                                    </v-scroll-y-transition>
+                                </v-card>
+                            </v-item>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </v-item-group>
+        </v-card>
+    </v-container>
 </template>
 
 <script>

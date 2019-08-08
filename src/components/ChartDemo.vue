@@ -72,13 +72,13 @@
                             return a.name;
                         })
                     }],
-                    animationDuration: 1500,
                     animationEasingUpdate: 'quinticInOut',
                     series: [
                         {
                             name: 'Les Miserables',
                             type: 'graph',
                             layout: 'circular',
+                            top:"30%",
                             circular: {
                                 rotateLabel: true
                             },
@@ -140,7 +140,7 @@
 <style scoped>
     .echarts {
         width: 100%;
-        height: 500px;
+        height: 550px;
         margin-top: 30px;
     }
 

@@ -1,5 +1,7 @@
 <template>
-    <v-content>
+    <v-container
+            fluid
+    >
         <v-list-item>
             <v-list-item-content>
                 <v-list-item-title class="title">
@@ -45,7 +47,7 @@
                 </v-list-item>
             </v-list-item-group>
         </v-list>
-    </v-content>
+    </v-container>
 </template>
 
 <script>

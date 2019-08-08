@@ -10,7 +10,8 @@ export default new Vuetify({
             books: 'mdi-library-books',
             wiki: 'mdi-chart-donut',
             myth: 'mdi-card-bulleted-settings-outline',
-            close:'mdi-window-close'
+            close:'mdi-window-close',
+            reference:'mdi-cube-outline'
         },
     },
 });

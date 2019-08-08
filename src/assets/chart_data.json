@@ -3,7 +3,7 @@
     "nodes": [
       {
         "id": "0",
-        "name": "Myriel",
+        "name": "毛瑞尔",
         "itemStyle": null,
         "symbolSize": 19.12381,
         "x": -266.82776,
@@ -2528,6 +2528,7 @@
         "name": null,
         "source": "55",
         "target": "11",
+        "relation": "father-in-law",
         "lineStyle": {
           "normal": {}
         }

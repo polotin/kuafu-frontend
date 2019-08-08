@@ -1,13 +1,19 @@
 <template>
     <v-container>
+
         <v-card
                 width="100%"
                 class="mx-auto"
         >
+            <transition name="fade">>
+                <floating-button v-if="show" :figure="figure"></floating-button>
+            </transition>
+
             <v-card-title>les miserables</v-card-title>
             <v-divider></v-divider>
-            <v-chart :options="relationMap"/>
+            <v-chart :options="relationMap" @click="onClick"/>
         </v-card>
+
     </v-container>
 </template>
 
@@ -19,12 +25,12 @@
     import 'echarts/lib/component/tooltip'
     import 'echarts-gl'
     import data from '../assets/chart_data'
-
-    alert(data.data.nodes.length + ", " + data.data.links.length);
+    import FloatingButton from "./FloatingButton";
 
     export default {
         name: "ChartDemo",
         components: {
+            FloatingButton,
             'v-chart': ECharts
         },
         data() {
@@ -46,10 +52,20 @@
                 };
                 node.category = node.attributes.modularity_class;
             });
-
             return {
+                show: false,
+                figure: "",
                 relationMap: {
-                    tooltip: {},
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function (params) {
+                            if (params.data.source) {//注意判断，else是将节点的文字也初始化成想要的格式
+                                return '<b>_' + params.data.relation + '_</b>';
+                            } else {
+                                return params.name;
+                            }
+                        }
+                    },
                     legend: [{
                         // selectedMode: 'single',
                         data: categories.map(function (a) {
@@ -83,6 +99,15 @@
                                 position: 'right',
                                 formatter: '{b}'
                             },
+                            // edgeLabel: {
+                            //     normal: {
+                            //         show: true,
+                            //         position: 'middle',
+                            //         formatter: function (x) {
+                            //             return x.data.relation;
+                            //         }
+                            //     }
+                            // },
                             lineStyle: {
                                 color: 'source',
                                 curveness: 0.3
@@ -97,6 +122,17 @@
                     animationDuration: 2000
                 }
             }
+        },
+        methods: {
+            onClick(event) {
+                if (event.data.name) {
+                    this.figure = event.data.name;
+                    this.show = true;
+                } else {
+                    this.figure = "";
+                    this.show = false;
+                }
+            },
         }
     }
 </script>
@@ -105,5 +141,15 @@
     .echarts {
         width: 100%;
         height: 500px;
+        margin-top: 30px;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+    {
+        opacity: 0;
     }
 </style>

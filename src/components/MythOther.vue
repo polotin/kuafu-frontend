@@ -13,8 +13,9 @@
                         >
                             <v-item v-slot:default="{ active, toggle }">
                                 <v-card
-                                        img="./img/fabric.png"
-                                        :color="active ? 'primary' : colors[Math.round(Math.random()*(color_num-1))]"
+                                        :img="active? './img/stacked_circles.png' : './img/fabric.png'"
+                                        :color="active ? 'blue darken-4' : colors[Math.round(Math.random()*(color_num-1))]"
+                                        :elevation="active ? 20 : 2"
                                         class="d-flex align-center"
                                         style="background-repeat: repeat; background-size: initial;"
                                         height="100"
@@ -50,12 +51,15 @@
         "indigo", "blue", "light-blue", "cyan", "teal",
         "green", "light-green", "lime", "amber", "orange",
         "deep-orange", "brown", "blue-grey", "grey"];
+    let tales = ["世界的构成", "造物主", "盘古与盘瓠", "女娲的功绩", "婚姻之神的女娲", "女娲与伏羲", "天梯",
+        "伏羲与燧人", "廪君与盐水女神", "填海、追日", " 断首、触山", "归墟五神山", "发现药草的神农",
+        "炎帝和他的后裔", "炎帝诸女", "黄帝和昆仑山", "视肉、离朱", "神国最高统治者", "黄炎之争", "炎帝与灶神"];
     export default {
         name: "MythOther",
         data() {
             return {
-                story: ["世界的构成", "造物主", "盘古与盘瓠", "女娲的功绩", "婚姻之神的女娲", "女娲与伏羲", "天梯"],
-                rows: 3,
+                story: tales,
+                rows: Math.ceil(tales.length / 3),
                 colors: material_colors,
                 color_num: material_colors.length - 1,
             }

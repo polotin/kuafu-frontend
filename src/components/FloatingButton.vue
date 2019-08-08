@@ -15,8 +15,8 @@
                         dark
                         fab
                 >
-                    <v-icon v-if="fab">X</v-icon>
-                    <v-icon v-else>A</v-icon>
+                    <v-icon v-if="fab">$vuetify.icons.close</v-icon>
+                    <div v-else style="font-family: 'Roboto', sans-serif; font-size: 18px">{{figure[0]}}</div>
                 </v-btn>
             </template>
             <v-btn

@@ -201,7 +201,7 @@
       },
       {
         "id": "11",
-        "name": "Valjean",
+        "name": "冉·阿让",
         "itemStyle": null,
         "symbolSize": 66.66666666666667,
         "x": -87.93029,
@@ -489,7 +489,7 @@
       },
       {
         "id": "27",
-        "name": "Javert",
+        "name": "沙威",
         "itemStyle": null,
         "symbolSize": 31.923806666666668,
         "x": -81.46074,
@@ -993,7 +993,7 @@
       },
       {
         "id": "55",
-        "name": "Marius",
+        "name": "马吕斯",
         "itemStyle": null,
         "symbolSize": 35.58095333333333,
         "x": 206.44687,

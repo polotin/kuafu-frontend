@@ -3,8 +3,8 @@
         <v-navigation-drawer
                 width="300"
                 v-model="drawer"
-                fixed
-                temporary>
+                temporary
+                app>
             <navigation-drawer @hideIfNotLeave="hideIfNotLeave"/>
         </v-navigation-drawer>
         <v-app-bar app dense color="#1E90FF">

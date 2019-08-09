@@ -2,7 +2,7 @@
     <v-container fluid>
         <v-list-item style="padding-left: 8px">
             <v-list-item-avatar>
-                <v-img src="../assets/favicon.png"></v-img>
+                <v-img src="../assets/logo.svg"></v-img>
             </v-list-item-avatar>
             <v-list-item-content>
                 <v-list-item-title class="title">
@@ -49,7 +49,7 @@
 
                 <v-list-item to="/chart">
                     <v-list-item-icon>
-                        <v-icon>mdi-chart-arc</v-icon>
+                        <v-icon>mdi-google-circles-extended</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>图 表</v-list-item-title>
@@ -65,14 +65,19 @@
                 dense>
 
             <v-list-item>
-                <!--                <v-list-item-icon>-->
-                <!--                    <v-icon>$vuetify.icons.reference</v-icon>-->
-                <!--                </v-list-item-icon>-->
                 <v-list-item-content>
                     <v-list-item-title>Reference</v-list-item-title>
                     <v-list-item-subtitle style="margin-top: 10px">《中国神话史》</v-list-item-subtitle>
                     <v-list-item-subtitle>《中国神话传说》</v-list-item-subtitle>
                     <v-list-item-subtitle>《中国神话通论》</v-list-item-subtitle>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-content>
+                    <v-list-item-title>Data Source</v-list-item-title>
+                    <v-list-item-subtitle style="margin-top: 10px">搜韵诗词</v-list-item-subtitle>
+                    <v-list-item-subtitle>上海图书馆</v-list-item-subtitle>
+                    <v-list-item-subtitle>维基百科</v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
 

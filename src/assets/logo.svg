@@ -1,1 +1,44 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.5 100"><defs><style>.cls-1{fill:#1697f6;}.cls-2{fill:#7bc6ff;}.cls-3{fill:#1867c0;}.cls-4{fill:#aeddff;}</style></defs><title>Artboard 46</title><polyline class="cls-1" points="43.75 0 23.31 0 43.75 48.32"/><polygon class="cls-2" points="43.75 62.5 43.75 100 0 14.58 22.92 14.58 43.75 62.5"/><polyline class="cls-3" points="43.75 0 64.19 0 43.75 48.32"/><polygon class="cls-4" points="64.58 14.58 87.5 14.58 43.75 100 43.75 62.5 64.58 14.58"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="689px" height="689px" viewBox="0 0 689 689" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50%" id="radialGradient-1">
+            <stop stop-color="#B71C1C" offset="0%"></stop>
+            <stop stop-color="#E53935" offset="100%"></stop>
+        </radialGradient>
+        <circle id="path-2" cx="518.40566" cy="139.809834" r="61.799"></circle>
+        <filter x="-26.3%" y="-19.8%" width="152.6%" height="152.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="4.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="8" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.524147727 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="8.80158683%" y1="74.2%" x2="98.0981474%" y2="21.9%" id="linearGradient-4">
+            <stop stop-color="#2572AF" offset="0%"></stop>
+            <stop stop-color="#F44336" offset="100%"></stop>
+        </linearGradient>
+        <path d="M375.08626,656.29555 C353.644159,659.280294 331.959202,660.134574 310.348748,658.845888 C265.692607,656.131823 222.041935,644.442855 182.005407,624.477547 C143.509965,605.230133 109.181688,578.590278 80.9798602,546.07845 C39.0394559,497.808357 11.997977,438.41097 3.13196416,375.083304 C0.147115435,353.641212 -0.707165089,331.956245 0.581626158,310.345792 C3.29769114,265.691515 14.9879145,222.043035 34.9537122,182.008695 C54.1995584,143.509453 80.8403564,109.178209 113.35486,80.97535 C161.621779,39.0375599 221.014991,11.9972284 284.338414,3.13056204 C305.780022,0.147529035 327.464185,-0.706571805 349.073994,0.580742044 C370.817949,1.89763487 392.379552,5.35101313 413.447128,10.890958 C413.689573,10.953314 413.935434,11.016825 414.178656,11.082079 C446.993161,20.0433579 466.398806,53.8357611 457.599667,86.6941149 C448.800529,119.552469 415.104359,139.124737 382.202957,130.487953 C381.978936,130.424799 381.755433,130.363577 381.524391,130.30127 L381.526722,130.309964 C368.524694,126.92681 355.22478,124.814623 341.814336,124.00316 C314.962885,122.399684 288.058495,126.099695 262.63672,134.892017 C224.856169,147.921934 191.665824,171.630155 167.08812,203.14341 C158.774023,213.818869 151.538551,225.292138 145.487814,237.394956 C133.009475,262.417398 125.703986,289.69877 124.007978,317.608537 C122.40657,344.460918 126.106792,371.365905 134.897612,396.789051 C147.930165,434.568025 171.636781,467.758012 203.146366,492.339394 C213.822595,500.651173 225.295467,507.885589 237.397135,513.936802 C262.420048,526.414765 289.701675,533.720146 317.611682,535.416379 C344.463222,537.022164 371.368061,533.322091 396.789298,524.527522 C434.569892,511.498695 467.760191,487.790758 492.337191,456.277354 C500.651213,445.600967 507.886431,434.126719 513.93672,422.02291 C526.416014,397.002652 533.722387,369.723061 535.419076,341.814866 C536.690578,320.580533 534.641883,299.277813 529.346877,278.674985 C529.198281,278.172254 529.055693,277.666187 528.919114,277.156783 C520.232492,244.447991 539.466319,210.835642 572.06726,201.752627 C604.6682,192.669611 638.511541,211.494021 647.989611,243.982306 L648.050469,243.965989 C693.006973,411.30794 600.838971,584.910702 437.036897,641.419962 C429.723194,643.945543 422.319551,646.212909 414.825967,648.222058 C401.757993,651.72773 388.486225,654.424013 375.08626,656.29555 Z" id="path-5"></path>
+        <filter x="-4.5%" y="-3.0%" width="107.6%" height="107.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="2.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="-5" dy="5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.363772946 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-739.000000, -66.000000)" fill-rule="nonzero">
+            <g id="Group" transform="translate(759.000000, 76.000000)">
+                <g id="椭圆_7-2" transform="translate(518.405660, 139.809834) rotate(45.000000) translate(-518.405660, -139.809834) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#radialGradient-1)" xlink:href="#path-2"></use>
+                </g>
+                <g id="路径_1">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

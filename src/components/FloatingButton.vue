@@ -46,16 +46,38 @@
         </v-speed-dial>
 
         <v-dialog v-model="dialog" width="100%">
-            <v-card scrollable min-height="100%">
-                <p style="height: 10px"></p>
-                <p class="title text--primary card-title">{{figure}} 百科</p>
+            <v-card
+                    class="mx-auto"
+                    width="100%"
+            >
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title class="headline">{{wiki.title}}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
                 <v-divider></v-divider>
+                <v-card-text style="text-align: justify; text-indent: 2em;">
+                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">
+                        {{paragraph}}
+                    </p>
+                </v-card-text>
             </v-card>
+            <v-overlay :value="showProgressing" opacity="0.1">
+                <v-progress-circular
+                        :size="30"
+                        width="3"
+                        color="primary"
+                        indeterminate
+                ></v-progress-circular>
+            </v-overlay>
+
         </v-dialog>
     </div>
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         name: "FloatingButton",
         props: {
@@ -73,11 +95,32 @@
             tabs: null,
             transition: 'slide-x-transition',
             dialog: false,
+
+            wiki: {},
+            showProgressing: false,
+
         }),
         methods: {
             showWiki() {
                 let self = this;
+                self.wiki = {};
                 self.dialog = true;
+                self.showProgressing = true;
+
+                let url = 'https://www.kuafu.online/wiki';
+                axios.post(url, {
+                    keyword: self.figure
+                })
+                    .then(res => {
+                        let data = res.data;
+                        self.wiki = data;
+                        self.showProgressing = false;
+                        console.log(data);
+                    })
+                    .catch(e => {
+                        self.showProgressing = false;
+                        console.log(e);
+                    })
             }
         }
     }

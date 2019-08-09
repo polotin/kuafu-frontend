@@ -125,6 +125,7 @@
         },
         methods: {
             onClick(event) {
+                console.log(event.data.name);
                 if (event.data.name) {
                     this.figure = event.data.name;
                     this.show = true;

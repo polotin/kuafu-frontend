@@ -22,13 +22,16 @@
                 </v-card-text>
             </v-card>
         </v-timeline-item>
+        <back-totop></back-totop>
     </v-timeline>
 </template>
 <script>
-    import {nodes, nodeColors} from '../js/timeline'
+    import {nodes, nodeColors} from '../js/timeline';
+    import BackTotop from "./BackTotop";
 
     export default {
         name: "MythTimeline",
+        components: {BackTotop},
         data() {
             return {
                 nodes: [],

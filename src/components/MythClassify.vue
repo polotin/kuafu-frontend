@@ -72,11 +72,13 @@
                 </v-layout>
             </v-container>
         </v-card>
-
+        <back-totop></back-totop>
     </v-container>
 </template>
 
 <script>
+    import BackTotop from "./BackTotop";
+
     let material_colors = ["red", "pink", "purple", "deep-purple",
         "indigo", "blue", "light-blue", "cyan", "teal",
         "green", "light-green", "lime", "amber", "orange",
@@ -96,6 +98,7 @@
     }
     export default {
         name: "MythClassify",
+        components: {BackTotop},
         data: () => ({
             popout: false,
             inset: false,

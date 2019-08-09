@@ -11,7 +11,8 @@ export default new Vuetify({
             wiki: 'mdi-chart-donut',
             myth: 'mdi-card-bulleted-settings-outline',
             close:'mdi-window-close',
-            reference:'mdi-cube-outline'
+            reference:'mdi-cube-outline',
+            top:'mdi-chevron-up'
         },
     },
 });

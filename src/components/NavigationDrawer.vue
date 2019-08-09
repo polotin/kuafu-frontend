@@ -22,10 +22,10 @@
             <v-list-item-group active-class="deep-purple--text text--accent-4">
                 <v-list-item to="/">
                     <v-list-item-icon>
-                        <v-icon>$vuetify.icons.books</v-icon>
+                        <v-icon>$vuetify.icons.myth</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>首 页</v-list-item-title>
+                        <v-list-item-title>神 话</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
@@ -38,12 +38,21 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item to="/myth">
+                <v-list-item to="/poem">
                     <v-list-item-icon>
-                        <v-icon>$vuetify.icons.myth</v-icon>
+                        <v-icon>$vuetify.icons.books</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>神 话</v-list-item-title>
+                        <v-list-item-title>词 韵</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item to="/chart">
+                    <v-list-item-icon>
+                        <v-icon>mdi-chart-arc</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>图 表</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list-item-group>

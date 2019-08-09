@@ -1,4 +1,4 @@
-var nodes = `[
+let nodes = `[
 {
 "id": "100001",
 "type": "Primitive",

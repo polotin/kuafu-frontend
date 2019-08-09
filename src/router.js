@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Poem from './views/Poem.vue'
+import Chart from './views/Chart.vue'
 import Wiki from './views/Wiki.vue'
 import Myth from './views/Myth.vue'
+import MythList from './views/MythList.vue'
 
 Vue.use(Router)
 
@@ -11,8 +13,8 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'home',
-            component: Home
+            name: 'myth',
+            component: Myth
         },
         {
             path: '/wiki',
@@ -20,19 +22,19 @@ export default new Router({
             component: Wiki
         },
         {
-            path: '/myth',
-            name: 'myth',
-            component: Myth
+            path: '/myth/list',
+            name: 'myth-list',
+            component: MythList
         },
         {
-            path: '/about',
-            name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: function () {
-                return import(/* webpackChunkName: "about" */ './views/About.vue')
-            }
-        }
+            path: '/poem',
+            name: 'poem',
+            component: Poem
+        },
+        {
+            path: '/chart',
+            name: 'chart',
+            component: Chart
+        },
     ]
 })

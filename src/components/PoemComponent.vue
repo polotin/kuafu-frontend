@@ -32,7 +32,7 @@
             <v-card scrollable min-height="100%">
                 <p style="height: 10px"></p>
                 <p class="title text--primary card-title">{{currentPoem.Title}}</p>
-                <p class="card-author">{{currentPoem.Author}}·{{currentPoem.Dynasty}}</p>
+                <p class="card-author"><span style="color: dodgerblue;">{{currentPoem.Author}}</span>·{{currentPoem.Dynasty}}</p>
                 <v-divider></v-divider>
                 <v-container style="margin-top: 10px">
                     <p v-for="(clause, index) in currentPoem.Clauses" :key="index" class="card-clause">
@@ -79,7 +79,6 @@
                         let data = res.data;
                         self.result = data.result;
                         self.showProgressing = false;
-                        console.log(data);
                     })
                     .catch(e => {
                         self.showProgressing = false;
@@ -90,6 +89,18 @@
                 let self = this;
                 self.currentPoem = poem;
                 self.dialog = true;
+            },
+            toAuthorInfo() {
+                let self = this;
+                let chName = self.currentPoem.Author;
+                self.$router
+                    .push({
+                        path: '/author',
+                        name: 'author',
+                        params: {
+                            chName: chName
+                        }
+                    });
             }
         }
     }

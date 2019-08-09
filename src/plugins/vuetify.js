@@ -12,7 +12,6 @@ export default new Vuetify({
             myth: 'mdi-card-bulleted-settings-outline',
             close:'mdi-window-close',
             reference:'mdi-cube-outline',
-            top:'mdi-chevron-up'
         },
     },
 });

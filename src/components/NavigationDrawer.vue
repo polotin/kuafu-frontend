@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <v-list-item>
+        <v-list-item style="padding-left: 8px">
             <v-list-item-avatar>
                 <v-img src="../assets/favicon.png"></v-img>
             </v-list-item-avatar>

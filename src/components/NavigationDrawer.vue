@@ -1,6 +1,9 @@
 <template>
     <v-container fluid>
         <v-list-item>
+            <v-list-item-avatar>
+                <v-img src="../assets/favicon.png"></v-img>
+            </v-list-item-avatar>
             <v-list-item-content>
                 <v-list-item-title class="title">
                     夸 父（KUAFU）

@@ -5,13 +5,39 @@
                 width="100%"
                 class="mx-auto"
         >
-            <transition name="fade">>
-                <floating-button v-if="show" :figure="figure"></floating-button>
-            </transition>
 
-            <v-card-title>les miserables</v-card-title>
+            <div v-if="show">
+                <transition name="fade">
+                    <floating-button :figure="figure"></floating-button>
+                </transition>
+            </div>
+            <div v-else>
+                <v-speed-dial
+                        top
+                        right
+                        absolute
+                >
+                    <template v-slot:activator>
+                        <v-btn
+                                color="indigo accent-1"
+                                relative
+                                small
+                                dark
+                                fab
+                                elevation=0
+                                @click="resize"
+                        >
+                            <v-icon v-if="enlarge">mdi-fullscreen-exit</v-icon>
+                            <v-icon v-else>mdi-fullscreen</v-icon>
+                        </v-btn>
+                    </template>
+                </v-speed-dial>
+            </div>
+
+            <v-card-title style="font-size: 1.2rem;">神话人物关系图</v-card-title>
             <v-divider></v-divider>
-            <v-chart :options="relationMap" @click="onClick"/>
+            <v-chart v-if="enlarge" :options="relationMap2" @click="onClick"/>
+            <v-chart v-else :options="relationMap1" @click="onClick"/>
         </v-card>
 
     </v-container>
@@ -19,12 +45,11 @@
 
 <script>
     import ECharts from 'vue-echarts' // 在 webpack 环境下指向 components/ECharts.vue
-
     // 手动引入 ECharts 各模块来减小打包体积
     import 'echarts/lib/chart/graph'
     import 'echarts/lib/component/tooltip'
     import 'echarts-gl'
-    import data from '../assets/chart_data'
+    import data from '../assets/relations'
     import FloatingButton from "./FloatingButton";
 
     export default {
@@ -44,23 +69,21 @@
             graph.nodes.forEach(function (node) {
                 node.itemStyle = null;
                 node.value = node.symbolSize;
-                node.symbolSize /= 1.5;
+                node.symbolSize *= 1.2;
                 node.label = {
                     normal: {
-                        show: node.symbolSize > 10
+                        show: node.symbolSize > 2
                     }
                 };
                 node.category = node.attributes.modularity_class;
             });
-            return {
-                show: false,
-                figure: "",
-                relationMap: {
+            let relationMap = (width, top) => {
+                return {
                     tooltip: {
                         trigger: 'item',
                         formatter: function (params) {
                             if (params.data.source) {//注意判断，else是将节点的文字也初始化成想要的格式
-                                return '<b>_' + params.data.relation + '_</b>';
+                                return '关系：<b>' + params.data.relation + '</b>';
                             } else {
                                 return params.name;
                             }
@@ -78,7 +101,8 @@
                             name: 'Les Miserables',
                             type: 'graph',
                             layout: 'circular',
-                            top:"30%",
+                            top: top,
+                            width: width,
                             circular: {
                                 rotateLabel: true
                             },
@@ -120,12 +144,18 @@
                         }
                     ],
                     animationDuration: 2000
-                }
+                };
+            };
+            return {
+                show: false,
+                figure: "",
+                enlarge: false,
+                relationMap1: relationMap(300, "0"),
+                relationMap2: relationMap(800, "15%")
             }
         },
         methods: {
             onClick(event) {
-                console.log(event.data.name);
                 if (event.data.name) {
                     this.figure = event.data.name;
                     this.show = true;
@@ -134,6 +164,9 @@
                     this.show = false;
                 }
             },
+            resize() {
+                this.enlarge = !this.enlarge;
+            }
         }
     }
 </script>
@@ -141,7 +174,7 @@
 <style scoped>
     .echarts {
         width: 100%;
-        height: 550px;
+        height: 600px;
         margin-top: 30px;
     }
 
@@ -152,5 +185,9 @@
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
     {
         opacity: 0;
+    }
+
+    .v-speed-dial {
+        margin-top: 20px;
     }
 </style>

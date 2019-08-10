@@ -42,9 +42,16 @@
                     </v-carousel>
                 </div>
 
+                <div v-for="(item, index) in items">
+                    <button v-if="item.is_button" @click="onButtonClick(index)"></button>
+                        <div v-html="item.mold"></div>
+                </div>
+
+<!--                <book-query :name="items"></book-query>-->
+
                 <v-card-text style="text-align: justify; text-indent: 2em;">
                     <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">
-                        {{paragraph}}
+                        <span v-html="paragraph"/>
                     </p>
                 </v-card-text>
 
@@ -73,20 +80,6 @@
 
         </v-container>
 
-        <!--<v-dialog v-model="dialog" width="100%">-->
-        <!--<v-card scrollable min-height="100%">-->
-        <!--<p style="height: 10px"></p>-->
-        <!--<p class="title text&#45;&#45;primary card-title">{{currentPoem.Title}}</p>-->
-        <!--<p class="card-author">{{currentPoem.Author}}·{{currentPoem.Dynasty}}</p>-->
-        <!--<v-divider></v-divider>-->
-        <!--<v-container style="margin-top: 10px">-->
-        <!--<p v-for="(clause, index) in currentPoem.Clauses" :key="index" class="card-clause">-->
-        <!--<span v-html="clause"/>-->
-        <!--</p>-->
-        <!--</v-container>-->
-        <!--</v-card>-->
-        <!--</v-dialog>-->
-
         <v-overlay :value="showProgressing" opacity="0.1">
             <v-progress-circular
                     :size="30"
@@ -100,9 +93,11 @@
 
 <script>
     import axios from 'axios';
+    import BookQuery from "./BookQuery";
 
     export default {
         name: "WikiPedia",
+        components: {BookQuery},
         data() {
             return {
                 keyword: null,

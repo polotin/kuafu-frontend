@@ -14,7 +14,7 @@
                     {{node.node}}
                 </span>
             </template>
-            <v-card width="95%">
+            <v-card width="95%" @click.stop="showMythList(node.type)">
                 <!--:color="nodeColors[nodeIndex/nodeColors.length]"-->
                 <v-card-title class="headline">{{node.title}}</v-card-title>
                 <v-card-text>
@@ -28,6 +28,7 @@
 <script>
     import {nodes, nodeColors} from '../js/timeline';
     import BackTotop from "./BackTotop";
+    import {axios} from 'axios'
 
     export default {
         name: "MythTimeline",
@@ -38,10 +39,22 @@
                 nodeColors: []
             }
         },
-
         mounted() {
             this.nodes = JSON.parse(nodes);
             this.nodeColors = nodeColors;
+        },
+        methods: {
+            showMythList(type) {
+                let self = this;
+                self.$router
+                    .push({
+                        path: '/myth/list',
+                        nam: 'mythList',
+                        query: {
+                            type: type
+                        }
+                    });
+            }
         }
     }
 </script>

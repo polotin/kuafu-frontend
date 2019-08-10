@@ -19,7 +19,7 @@
                 <v-list-item>
                     <v-list-item-content>
                         <v-list-item-title class="headline">{{wiki.title}}</v-list-item-title>
-                        <v-list-item-subtitle>
+                        <v-list-item-subtitle style="white-space: normal">
                             <span v-for="(category, cIndex) in wiki.categories" :key="cIndex"
                                   style="color: dodgerblue;">
                                 #{{category}}&nbsp;
@@ -32,7 +32,7 @@
                     <v-carousel v-if="wiki.image != null && wiki.image.length > 0" hide-delimiters height="100%">
                         <v-carousel-item
                                 v-for="(imgSrc, imgIndex) in wiki.image" :key="imgIndex">
-                            <v-img :aspect-ratio="16/9" :src="imgSrc" :contain="true" >
+                            <v-img :aspect-ratio="16/9" :src="imgSrc" :contain="true">
                             </v-img>
                         </v-carousel-item>
                     </v-carousel>
@@ -42,16 +42,17 @@
                     </v-carousel>
                 </div>
 
-                <div v-for="(item, index) in items">
-                    <button v-if="item.is_button" @click="onButtonClick(index)"></button>
-                        <div v-html="item.mold"></div>
-                </div>
-
-<!--                <book-query :name="items"></book-query>-->
-
                 <v-card-text style="text-align: justify; text-indent: 2em;">
-                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">
-                        <span v-html="paragraph"/>
+                    <p v-for="(summary, index) in wiki.summary" :key="index" class="wiki-summary">
+                        <span v-show="false">{{s = 0}}</span>
+                        <span v-for="piece in summary.pieces">
+                            <span v-if="piece != '#'">
+                                {{piece}}
+                            </span>
+                            <span v-else style="color: dodgerblue" @click="showBook(summary.books[s])">
+                                《{{summary.books[s++]}}》
+                            </span>
+                        </span>
                     </p>
                 </v-card-text>
 
@@ -93,11 +94,9 @@
 
 <script>
     import axios from 'axios';
-    import BookQuery from "./BookQuery";
 
     export default {
         name: "WikiPedia",
-        components: {BookQuery},
         data() {
             return {
                 keyword: null,
@@ -117,11 +116,21 @@
                         let data = res.data;
                         self.wiki = data;
                         self.showProgressing = false;
-                        console.log(data);
                     })
                     .catch(e => {
                         self.showProgressing = false;
                         console.log(e);
+                    })
+            },
+            showBook(bookName) {
+                let self = this;
+                self.$router
+                    .push({
+                        path: '/books',
+                        name: 'books',
+                        query: {
+                            bookName: bookName
+                        }
                     })
             }
         }

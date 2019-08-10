@@ -5,6 +5,9 @@ import Chart from './views/Chart.vue'
 import Wiki from './views/Wiki.vue'
 import Myth from './views/Myth.vue'
 import MythList from './views/MythList.vue'
+import MythDetail from './views/MythDetail.vue'
+import BookList from './views/BookList.vue'
+import Book from './views/Book.vue'
 
 Vue.use(Router)
 
@@ -27,6 +30,11 @@ export default new Router({
             component: MythList
         },
         {
+            path: '/myth/detail',
+            name: 'myth-detail',
+            component: MythDetail
+        },
+        {
             path: '/poem',
             name: 'poem',
             component: Poem
@@ -35,6 +43,16 @@ export default new Router({
             path: '/chart',
             name: 'chart',
             component: Chart
+        },
+        {
+            path: '/books',
+            name: 'books',
+            component: BookList
+        },
+        {
+            path: '/books/book',
+            name: 'book',
+            component: Book
         },
     ]
 })

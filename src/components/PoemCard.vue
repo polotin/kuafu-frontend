@@ -3,17 +3,7 @@
         <v-card
                 class="mx-auto"
                 width="100%"
-                style="background:linear-gradient(0deg, #FFF 0%,transparent 100%),
-                linear-gradient(0deg, #FFF 0%,transparent 100%),
-                linear-gradient(135deg, rgba(96, 96, 96, 0.21) 0%, rgba(96, 96, 96, 0.21) 50%,rgba(45, 45, 45, 0.21) 50%, rgba(45, 45, 45, 0.21) 100%),
-                linear-gradient(0deg, rgba(220, 220, 220, 0.2) 0%, rgba(220, 220, 220, 0.2) 31%,rgba(200, 200, 200, 0.2) 31%, rgba(200, 200, 200, 0.2) 100%),
-                linear-gradient(0deg, rgba(124, 124, 124, 0.26) 0%, rgba(124, 124, 124, 0.26) 15%,rgba(218, 218, 218, 0.26) 15%, rgba(218, 218, 218, 0.26) 100%),
-                linear-gradient(45deg, rgba(157, 157, 157, 0.14) 0%, rgba(157, 157, 157, 0.14) 46%,rgba(26, 26, 26, 0.14) 46%, rgba(26, 26, 26, 0.14) 100%),
-                linear-gradient(45deg, rgba(180, 180, 180, 0.1) 0%, rgba(180, 180, 180, 0.1) 45%,rgba(62, 62, 62, 0.1) 45%, rgba(62, 62, 62, 0.1) 100%),
-                linear-gradient(135deg, rgba(33, 33, 33, 0.22) 0%, rgba(33, 33, 33, 0.22) 59%,rgba(164, 164, 164, 0.22) 59%, rgba(164, 164, 164, 0.22) 100%),
-                linear-gradient(135deg, rgba(24, 24, 24, 0.11) 0%, rgba(24, 24, 24, 0.11) 71%,rgba(245, 245, 245, 0.11) 71%, rgba(245, 245, 245, 0.11) 100%),
-                linear-gradient(0deg, rgba(5, 5, 5, 0.15) 0%, rgba(5, 5, 5, 0.15) 91%,rgba(50, 50, 50, 0.15) 91%, rgba(50, 50, 50, 0.15) 100%),
-                linear-gradient(90deg, rgb(198, 198, 198),rgb(158, 158, 158));"
+                style="background:linear-gradient(0deg, #FFF 0%,transparent 100%),linear-gradient(0deg, #FFF 0%,transparent 100%),linear-gradient(135deg, rgba(96, 96, 96, 0.21) 0%, rgba(96, 96, 96, 0.21) 50%,rgba(45, 45, 45, 0.21) 50%, rgba(45, 45, 45, 0.21) 100%),linear-gradient(0deg, rgba(220, 220, 220, 0.2) 0%, rgba(220, 220, 220, 0.2) 31%,rgba(200, 200, 200, 0.2) 31%, rgba(200, 200, 200, 0.2) 100%),linear-gradient(0deg, rgba(124, 124, 124, 0.26) 0%, rgba(124, 124, 124, 0.26) 15%,rgba(218, 218, 218, 0.26) 15%, rgba(218, 218, 218, 0.26) 100%),linear-gradient(45deg, rgba(157, 157, 157, 0.14) 0%, rgba(157, 157, 157, 0.14) 46%,rgba(26, 26, 26, 0.14) 46%, rgba(26, 26, 26, 0.14) 100%),linear-gradient(45deg, rgba(180, 180, 180, 0.1) 0%, rgba(180, 180, 180, 0.1) 45%,rgba(62, 62, 62, 0.1) 45%, rgba(62, 62, 62, 0.1) 100%),linear-gradient(135deg, rgba(33, 33, 33, 0.22) 0%, rgba(33, 33, 33, 0.22) 59%,rgba(164, 164, 164, 0.22) 59%, rgba(164, 164, 164, 0.22) 100%),linear-gradient(135deg, rgba(24, 24, 24, 0.11) 0%, rgba(24, 24, 24, 0.11) 71%,rgba(245, 245, 245, 0.11) 71%, rgba(245, 245, 245, 0.11) 100%),linear-gradient(0deg, rgba(5, 5, 5, 0.15) 0%, rgba(5, 5, 5, 0.15) 91%,rgba(50, 50, 50, 0.15) 91%, rgba(50, 50, 50, 0.15) 100%),linear-gradient(90deg, rgb(198, 198, 198),rgb(158, 158, 158));"
         >
             <v-list-item-content class="card-title">
                 <v-list-item-title style="font-size: large; margin-bottom: 10px">天 问（节选）</v-list-item-title>
@@ -89,23 +79,23 @@
         font-weight: normal;
     }
 
-    .tian-wen p{
+    .tian-wen p {
         color: black;
     }
 
-    .tian-wen-trans{
+    .tian-wen-trans {
         text-align: center;
         font-family: "Songti SC", serif;
         font-weight: bold;
 
     }
 
-    .tian-wen-trans p{
+    .tian-wen-trans p {
         font-size: 1.2em;
         margin-bottom: 5px;
     }
 
-    .text--primary{
+    .text--primary {
         margin-bottom: 10px;
     }
 </style>

@@ -18,7 +18,7 @@
                 </v-list-item-content>
 
                 <v-divider style="border-color: rgba(255,255,255,0.5)"></v-divider>
-                <div @click.stop="showTranslations">
+                <div @click.stop="showTranslations" class="overflow-y-auto" style="height: 450px; padding-bottom: 20px">
                     <v-card-text v-if="translations" class="tian-wen">
                         <p>邃古之初，谁传道之？</p>
                         <p>上下未形，何由考之？</p>
@@ -91,6 +91,7 @@
 
     .tian-wen p {
         color: white;
+        margin-top: 25px;
     }
 
     .tian-wen-trans {
@@ -108,5 +109,8 @@
     .translat {
         margin-bottom: 10px;
         color: #e0dee2;
+    }
+    .myscroll {
+        overflow-y: auto;
     }
 </style>

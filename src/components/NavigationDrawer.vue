@@ -1,15 +1,15 @@
 <template>
     <v-container fluid>
         <v-list-item style="padding-left: 8px">
-            <v-list-item-avatar @click="showGithub">
+            <v-list-item-avatar>
                 <v-img src="../assets/logo.svg"></v-img>
             </v-list-item-avatar>
-            <v-list-item-content @click="showGithub">
+            <v-list-item-content>
                 <v-list-item-title class="title">
                     夸 父（KUAFU）
                 </v-list-item-title>
                 <v-list-item-subtitle>
-                    @Github
+                   <a @click="openInNewTab('github')">@ Github</a>
                 </v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
@@ -67,9 +67,15 @@
             <v-list-item>
                 <v-list-item-content>
                     <v-list-item-title>Reference</v-list-item-title>
-                    <v-list-item-subtitle style="margin-top: 10px">《中国神话史》</v-list-item-subtitle>
-                    <v-list-item-subtitle>《中国神话传说》</v-list-item-subtitle>
-                    <v-list-item-subtitle>《中国神话通论》</v-list-item-subtitle>
+                    <v-list-item-subtitle style="margin-top: 10px">
+                        <a @click="openInNewTab('book1')">《中国神话史》</a>
+                    </v-list-item-subtitle>
+                    <v-list-item-subtitle>
+                        <a @click="openInNewTab('book2')">《中国神话传说》</a>
+                    </v-list-item-subtitle>
+                    <v-list-item-subtitle>
+                        <a @click="openInNewTab('book3')">《中国神话通论》</a>
+                    </v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
             <v-list-item>
@@ -93,26 +99,23 @@
             return {}
         },
         methods: {
-            // backHome() {
-            //     this.$router.push({
-            //         path: '/',
-            //     });
-            //     this.$emit('hideIfNotLeave')
-            // },
-            // toWiki() {
-            //     this.$router.push({
-            //         path: '/wiki',
-            //     });
-            //     this.$emit('hideIfNotLeave')
-            // },
-            // toMyth() {
-            //     this.$router.push({
-            //         path: '/myth',
-            //     });
-            //     this.$emit('hideIfNotLeave')
-            // }
-            showGithub() {
-                window.open('https://github.com/polotin/kuafu-frontend')
+            openInNewTab(para){
+                switch(para)
+                {
+                    case "github":
+                        window.open("https://github.com/polotin/kuafu-frontend");
+                        break;
+                    case "book1":
+                        window.open("https://book.douban.com/subject/26665789/");
+                        break;
+                    case "book2":
+                        window.open("https://book.douban.com/subject/7014927/");
+                        break;
+                    case"book3":
+                        window.open("https://book.douban.com/subject/30434560/");
+                        break;
+                }
+
             }
         }
     }

@@ -49,8 +49,9 @@
                             <span v-if="piece != '#'">
                                 {{piece}}
                             </span>
-                            <span v-else style="color: dodgerblue" @click="showBook(summary.books[s])">
-                                《{{summary.books[s++]}}》
+                            <span v-else style="color: dodgerblue" @click="showBook(summary.books[s-1])">
+                                《{{summary.books[s]}}》
+                                <span v-show="false">{{s=s+1}}</span>
                             </span>
                         </span>
                     </p>

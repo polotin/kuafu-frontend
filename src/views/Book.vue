@@ -13,8 +13,7 @@
         </v-app-bar>
 
         <v-content>
-            <iframe id="mainiframe" width="100%;" allowfullscreen="true" height="100%" frameborder="0" :src="bookUrl"
-                    onload="changeFrameHeight()"></iframe>
+            <iframe id="mainiframe" width="100%;" allowfullscreen="true" height="100%" frameborder="0" :src="bookUrl"></iframe>
         </v-content>
     </v-app>
 </template>
@@ -34,10 +33,7 @@
             }
         },
         methods: {
-            changeFrameHeight() {
-                let ifm = document.getElementById("mainiframe");
-                ifm.height = document.documentElement.clientHeight;
-            }
+
         },
         created() {
             let self = this;
@@ -45,13 +41,6 @@
             self.bookUrl = 'https://library.sh.cn/#/index/pBookDetails?bid=' + self.bid + '&type=zbook';
         },
 
-    }
-    window.onresize = function () {
-        changeFrameHeight();
-    }
-    function changeFrameHeight() {
-        let ifm = document.getElementById("mainiframe");
-        ifm.height = document.documentElement.clientHeight;
     }
 </script>
 

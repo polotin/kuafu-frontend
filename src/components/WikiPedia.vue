@@ -44,15 +44,12 @@
 
                 <v-card-text style="text-align: justify; text-indent: 2em;">
                     <p v-for="(summary, index) in wiki.summary" :key="index" class="wiki-summary">
-                        <span v-show="false">{{s = 0}}</span>
-                        <span v-for="piece in summary.pieces">
+                        <span v-show="false">{{sIndex = 0}}</span>
+                        <span v-for="(piece, pIndex) in summary.pieces" :key="pIndex">
                             <span v-if="piece != '#'">
                                 {{piece}}
                             </span>
-                            <span v-else style="color: dodgerblue" @click="showBook(summary.books[s-1])">
-                                《{{summary.books[s]}}》
-                                <span v-show="false">{{s=s+1}}</span>
-                            </span>
+                            <span v-else style="color: dodgerblue" @click="showBook">《{{summary.books[sIndex++]}}》</span>
                         </span>
                     </p>
                 </v-card-text>
@@ -95,13 +92,14 @@
 
 <script>
     import axios from 'axios';
+    import store from "../store";
 
     export default {
         name: "WikiPedia",
         data() {
             return {
                 keyword: null,
-                wiki: {},
+                wiki: store.state.wiki,
                 showProgressing: false,
             }
         },
@@ -116,24 +114,29 @@
                     .then(res => {
                         let data = res.data;
                         self.wiki = data;
+                        self.$store.state.wiki = self.wiki;
                         self.showProgressing = false;
                     })
                     .catch(e => {
                         self.showProgressing = false;
                         console.log(e);
-                    })
+                    });
             },
-            showBook(bookName) {
+            showBook(e) {
                 let self = this;
                 self.$router
                     .push({
                         path: '/books',
                         name: 'books',
                         query: {
-                            bookName: bookName
+                            bookName: e.target.innerText.replace('《','').replace('》','').trim()
                         }
-                    })
+                    });
             }
+        },
+        beforeDestroy() {
+            let self = this;
+            self.$store.state.wiki = self.wiki;
         }
     }
 </script>

@@ -22,7 +22,10 @@ export default new Router({
         {
             path: '/wiki',
             name: 'wiki',
-            component: Wiki
+            component: Wiki,
+            meta:{
+                keepAlive:true
+            }
         },
         {
             path: '/myth/list',

@@ -1,14 +1,9 @@
 <template>
     <v-app>
-        <v-navigation-drawer
-                width="300"
-                v-model="drawer"
-                temporary
-                app>
-            <navigation-drawer/>
-        </v-navigation-drawer>
         <v-app-bar app dense dark>
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon @click.stop="goBack">
+                <v-icon>mdi-arrow-left</v-icon>
+            </v-app-bar-nav-icon>
             <v-toolbar-title>{{bookName}}</v-toolbar-title>
         </v-app-bar>
 
@@ -45,14 +40,11 @@
 
 <script>
     import axios from 'axios';
-    import NavigationDrawer from "../components/NavigationDrawer";
 
     export default {
         name: "BookList",
-        components: {NavigationDrawer},
         data() {
             return {
-                drawer: false,
                 bookName: '',
                 bookList: [],
                 noBook: false,
@@ -63,13 +55,17 @@
         methods: {
             showLibraryPage(bid) {
                 let self = this;
-                self.$router
-                    .push({
-                        path: 'books/book',
-                        query: {
-                            bid: bid
-                        }
-                    })
+                // self.$router
+                //     .push({
+                //         path: 'books/book',
+                //         query: {
+                //             bid: bid
+                //         }
+                //     })
+                window.open('https://library.sh.cn/#/index/pBookDetails?bid=' + bid + '&type=zbook')
+            },
+            goBack() {
+                this.$router.go(-1);
             }
         },
         created() {

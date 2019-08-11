@@ -1,10 +1,10 @@
 <template>
     <v-container fluid>
         <v-list-item style="padding-left: 8px">
-            <v-list-item-avatar>
+            <v-list-item-avatar @click="showGithub">
                 <v-img src="../assets/logo.svg"></v-img>
             </v-list-item-avatar>
-            <v-list-item-content>
+            <v-list-item-content @click="showGithub">
                 <v-list-item-title class="title">
                     夸 父（KUAFU）
                 </v-list-item-title>
@@ -92,26 +92,29 @@
         data() {
             return {}
         },
-        // methods: {
-        //     backHome() {
-        //         this.$router.push({
-        //             path: '/',
-        //         });
-        //         this.$emit('hideIfNotLeave')
-        //     },
-        //     toWiki() {
-        //         this.$router.push({
-        //             path: '/wiki',
-        //         });
-        //         this.$emit('hideIfNotLeave')
-        //     },
-        //     toMyth() {
-        //         this.$router.push({
-        //             path: '/myth',
-        //         });
-        //         this.$emit('hideIfNotLeave')
-        //     }
-        // }
+        methods: {
+            // backHome() {
+            //     this.$router.push({
+            //         path: '/',
+            //     });
+            //     this.$emit('hideIfNotLeave')
+            // },
+            // toWiki() {
+            //     this.$router.push({
+            //         path: '/wiki',
+            //     });
+            //     this.$emit('hideIfNotLeave')
+            // },
+            // toMyth() {
+            //     this.$router.push({
+            //         path: '/myth',
+            //     });
+            //     this.$emit('hideIfNotLeave')
+            // }
+            showGithub() {
+                window.open('https://github.com/polotin/kuafu-frontend')
+            }
+        }
     }
 </script>
 

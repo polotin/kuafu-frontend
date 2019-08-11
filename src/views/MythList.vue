@@ -1,14 +1,9 @@
 <template>
     <v-app>
-        <v-navigation-drawer
-                width="300"
-                v-model="drawer"
-                temporary
-                app>
-            <navigation-drawer/>
-        </v-navigation-drawer>
-        <v-app-bar app dense color="#1E90FF">
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar app dense dark>
+            <v-app-bar-nav-icon @click.stop="goBack">
+                <v-icon>mdi-arrow-left</v-icon>
+            </v-app-bar-nav-icon>
             <v-toolbar-title>{{titleMap[type]}}</v-toolbar-title>
         </v-app-bar>
 
@@ -33,17 +28,21 @@
                 type: '',
                 mythList: [],
                 titleMap: {
-                    'Primitive' : '原始社会前期的神话',
-                    'Shanhaiching-1' : '《山海经》的神话（上）',
-                    'Shanhaiching-2' : '《山海经》的神话（下）',
-                    'Preqin' : '先秦及汉初文献中的神话',
-                    'Han' : '汉代的感生神话及其他',
-                    'Buddhas' : '仙话及佛典中的神话',
-                    'Personage' : '历史人物的神话',
+                    'Primitive': '原始社会前期的神话',
+                    'Shanhaiching-1': '《山海经》的神话（上）',
+                    'Shanhaiching-2': '《山海经》的神话（下）',
+                    'Preqin': '先秦及汉初文献中的神话',
+                    'Han': '汉代的感生神话及其他',
+                    'Buddhas': '仙话及佛典中的神话',
+                    'Personage': '历史人物的神话',
                 }
             }
         },
-        methods: {},
+        methods: {
+            goBack() {
+                this.$router.go(-1);
+            }
+        },
         created() {
             let self = this;
             self.type = self.$route.query.type;
@@ -61,5 +60,7 @@
 </script>
 
 <style scoped>
-
+    .v-app-bar {
+        background: linear-gradient(135deg, rgb(32, 186, 230), rgb(110, 6, 173));
+    }
 </style>

@@ -11,6 +11,8 @@
             </v-layout>
         </v-container>
 
+        <poem-card v-show="showCard"></poem-card>
+
         <v-container class="poem-card" v-for="(poem, index) in result" :key="index" @click.stop="showPoem(poem)">
             <v-card width="100%">
                 <v-card-text>
@@ -19,7 +21,7 @@
                     <p>[{{poem.Dynasty}}] {{poem.Author}}</p>
                     <p>
                         <span v-for="(clause, clauseIndex) in poem.Clauses" :key="clauseIndex">
-                            <span v-if="clause.indexOf(keyword) != -1">
+                            <span v-if="clause.indexOf(keyword) !== -1">
                                 <span v-html="clause"></span>
                             </span>
                         </span>
@@ -32,11 +34,12 @@
             <v-card scrollable min-height="100%">
                 <p style="height: 10px"></p>
                 <p class="title text--primary card-title">{{currentPoem.Title}}</p>
-                <p class="card-author"><span style="color: dodgerblue;">{{currentPoem.Author}}</span>·{{currentPoem.Dynasty}}</p>
+                <p class="card-author"><span style="color: dodgerblue;">{{currentPoem.Author}}</span>·{{currentPoem.Dynasty}}
+                </p>
                 <v-divider></v-divider>
                 <v-container style="margin-top: 10px">
                     <p v-for="(clause, index) in currentPoem.Clauses" :key="index" class="card-clause">
-                        <span v-html="clause"/>
+                        <span v-html="clause"></span>
                     </p>
                 </v-container>
             </v-card>
@@ -55,22 +58,26 @@
 
 <script>
     import axios from 'axios';
+    import PoemCard from "./PoemCard";
 
     export default {
         name: "PoemComponent",
+        components: {PoemCard},
         data() {
             return {
                 keyword: null,
                 result: [],
                 dialog: false,
                 currentPoem: {},
-                showProgressing: false
+                showProgressing: false,
+                showCard: true
             }
         },
         methods: {
             findPoems() {
                 let self = this;
                 self.showProgressing = true;
+                self.showCard = false;
                 let url = 'https://www.kuafu.online/poems';
                 axios.post(url, {
                     keyword: self.keyword

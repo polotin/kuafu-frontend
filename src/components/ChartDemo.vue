@@ -69,7 +69,7 @@
             graph.nodes.forEach(function (node) {
                 node.itemStyle = null;
                 node.value = node.symbolSize;
-                node.symbolSize *= 1.2;
+                node.symbolSize *= 1.5;
                 node.label = {
                     normal: {
                         show: node.symbolSize > 2

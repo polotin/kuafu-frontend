@@ -3,12 +3,14 @@
         <v-container>
             <v-layout wrap>
                 <v-flex xs9>
-                    <v-text-field placeholder="请输入查询内容" v-model="keyword" style="width: 95%;"></v-text-field>
+                    <v-text-field :placeholder="keyword? keyword:'请输入查询内容'" v-model="keyword" style="width: 95%;"
+                                  @click.stop="showSearchSuggestions"></v-text-field>
                 </v-flex>
                 <v-flex xs3>
                     <v-btn @click.stop="findPoems" style="width: 100%; bottom: -10px;" color="primary">搜索</v-btn>
                 </v-flex>
             </v-layout>
+            <search-suggestions v-show="showSuggestions" @tagdata="getKeywordFromTag"></search-suggestions>
         </v-container>
 
         <poem-card v-show="showCard"></poem-card>
@@ -53,18 +55,22 @@
                     indeterminate
             ></v-progress-circular>
         </v-overlay>
+        <back-totop></back-totop>
     </v-container>
 </template>
 
 <script>
     import axios from 'axios';
     import PoemCard from "./PoemCard";
+    import SearchSuggestions from "./SearchSuggestions";
+    import BackTotop from "./BackTotop";
 
     export default {
         name: "PoemComponent",
-        components: {PoemCard},
+        components: {SearchSuggestions, PoemCard, BackTotop},
         data() {
             return {
+                showSuggestions: false,
                 keyword: null,
                 result: [],
                 dialog: false,
@@ -74,10 +80,17 @@
             }
         },
         methods: {
+            showSearchSuggestions() {
+                this.showSuggestions = true;
+            },
+            getKeywordFromTag(data) {
+                this.keyword = data;
+            },
             findPoems() {
                 let self = this;
                 self.showProgressing = true;
                 self.showCard = false;
+                self.showSuggestions = false;
                 let url = 'https://www.kuafu.online/poems';
                 axios.post(url, {
                     keyword: self.keyword

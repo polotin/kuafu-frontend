@@ -43,7 +43,7 @@
                         <v-icon>$vuetify.icons.books</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>词 韵</v-list-item-title>
+                        <v-list-item-title>诗 词</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
@@ -52,7 +52,7 @@
                         <v-icon>mdi-google-circles-extended</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>图 表</v-list-item-title>
+                        <v-list-item-title>关系图</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list-item-group>
@@ -66,7 +66,7 @@
 
             <v-list-item>
                 <v-list-item-content>
-                    <v-list-item-title>Reference</v-list-item-title>
+                    <v-list-item-title>参考书籍</v-list-item-title>
                     <v-list-item-subtitle style="margin-top: 10px">
                         <a @click="openInNewTab('book1')">《中国神话史》</a>
                     </v-list-item-subtitle>
@@ -80,7 +80,7 @@
             </v-list-item>
             <v-list-item>
                 <v-list-item-content>
-                    <v-list-item-title>Data Source</v-list-item-title>
+                    <v-list-item-title>数据来源</v-list-item-title>
                     <v-list-item-subtitle style="margin-top: 10px">搜韵诗词</v-list-item-subtitle>
                     <v-list-item-subtitle>上海图书馆</v-list-item-subtitle>
                     <v-list-item-subtitle>维基百科</v-list-item-subtitle>

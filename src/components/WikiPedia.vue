@@ -3,12 +3,13 @@
         <v-container>
             <v-layout wrap>
                 <v-flex xs9>
-                    <v-text-field placeholder="请输入查询内容" v-model="keyword" style="width: 95%;"></v-text-field>
+                    <v-text-field placeholder="请输入查询内容" v-model="keyword" style="width: 95%;" @click.stop="showSearchSuggestions"></v-text-field>
                 </v-flex>
                 <v-flex xs3>
                     <v-btn @click.stop="findWiki" style="width: 100%; bottom: -10px;" color="primary">搜索</v-btn>
                 </v-flex>
             </v-layout>
+            <search-suggestions v-show="showSuggestions" @tagdata="getKeywordFromTag"></search-suggestions>
         </v-container>
 
         <v-container>
@@ -87,33 +88,44 @@
                     indeterminate
             ></v-progress-circular>
         </v-overlay>
+        <back-totop></back-totop>
     </v-container>
 </template>
 
 <script>
     import axios from 'axios';
     import store from "../store";
+    import BackTotop from "./BackTotop";
+    import SearchSuggestions from "./SearchSuggestions";
 
     export default {
         name: "WikiPedia",
+        components: {SearchSuggestions, BackTotop},
         data() {
             return {
                 keyword: null,
                 wiki: store.state.wiki,
                 showProgressing: false,
+                showSuggestions: false,
             }
         },
         methods: {
+            showSearchSuggestions() {
+                this.showSuggestions = true;
+            },
+            getKeywordFromTag(data) {
+                this.keyword = data;
+            },
             findWiki() {
                 let self = this;
                 self.showProgressing = true;
+                self.showSuggestions = false;
                 let url = 'https://www.kuafu.online/wiki';
                 axios.post(url, {
                     keyword: self.keyword
                 })
                     .then(res => {
-                        let data = res.data;
-                        self.wiki = data;
+                        self.wiki = res.data;
                         self.$store.state.wiki = self.wiki;
                         self.showProgressing = false;
                     })

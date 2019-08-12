@@ -1,33 +1,5 @@
 <template>
     <v-container>
-        <!--        <v-layout column align-center>-->
-        <!--            <v-layout dense>-->
-        <!--                <v-switch v-model="popout" class="ma-2" label="Popout"></v-switch>-->
-        <!--                <v-switch v-model="inset" class="ma-2" label="Inset"></v-switch>-->
-        <!--                <v-switch v-model="multiple" class="ma-2" label="Multiple"></v-switch>-->
-        <!--            </v-layout>-->
-
-        <!--            <v-expansion-panels-->
-        <!--                    :inset="inset"-->
-        <!--                    :multiple="multiple"-->
-        <!--                    focusable-->
-        <!--            >-->
-        <!--                <v-expansion-panel-->
-        <!--                        v-for="item in chapters"-->
-        <!--                >-->
-        <!--                    <v-expansion-panel-header-->
-        <!--                            class="classify-panel-header"-->
-        <!--                    >{{item}}-->
-        <!--                    </v-expansion-panel-header>-->
-        <!--                    <v-expansion-panel-content>-->
-        <!--                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut-->
-        <!--                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco-->
-        <!--                        laboris nisi ut aliquip ex ea commodo consequat.-->
-        <!--                    </v-expansion-panel-content>-->
-        <!--                </v-expansion-panel>-->
-        <!--            </v-expansion-panels>-->
-        <!--        </v-layout>-->
-
         <v-card
                 max-width="100%"
                 class="mx-auto"
@@ -49,6 +21,7 @@
                                 :color="item.color"
                                 style="background-repeat: repeat; background-size: initial;"
                                 dark
+                                @click.stop="showMythChapter(item.id, item.title, item.color)"
                         >
                             <v-list-item three-line>
                                 <v-list-item-content class="align-self-start">
@@ -84,6 +57,7 @@
         "green", "light-green", "lime", "amber", "orange",
         "deep-orange", "brown", "blue-grey", "grey"];
     let myth_periods = ["开辟篇", "黄炎篇", "尧舜篇", "羿禹篇", "夏殷篇", "周秦篇"];
+    let myth_period_id = ["kai-pi", "huang-yan", "yao-shun", "yi-yu", "xia-yin", "zhou-qin"];
     let pics = [require('../assets/myth_period4.jpg'), require('../assets/myth_period1.jpg'), require('../assets/myth_period5.jpg'),
         require('../assets/myth_period2.jpg'), require('../assets/myth_period6.jpg'), require('../assets/myth_period3.jpg')];
     let items = [];
@@ -92,6 +66,7 @@
             color: material_colors[i],
             src: pics[i],
             title: myth_periods[i],
+            id: myth_period_id[i],
             artist: 'A Tale As Old As Time'
         };
         items.push(item);
@@ -108,6 +83,21 @@
             //     "魏晋六朝的神话（上）", "魏晋六朝的神话（下）", "唐五代的神话", "宋元的神话", "明清的神话"],
             items: items,
         }),
+        methods: {
+            showMythChapter(chapter, title, color) {
+                let self = this;
+                self.$router
+                    .push({
+                        path: '/myth/chapters',
+                        name: 'chaptermyth',
+                        query: {
+                            chapter: chapter,
+                            title: title,
+                            color: color
+                        }
+                    });
+            }
+        }
     }
 </script>
 

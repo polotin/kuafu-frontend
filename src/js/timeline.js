@@ -57,7 +57,7 @@ let nodes = `[
 }
 ]`;
 
-var nodeColors = ["red", "pink", "purple", "deep-purple",
+const nodeColors = ["red", "pink", "purple", "deep-purple",
     "indigo", "blue", "light-blue", "cyan", "teal",
     "green", "light-green", "lime", "amber", "orange",
     "deep-orange", "brown", "blue-grey", "grey"];

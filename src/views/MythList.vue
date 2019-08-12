@@ -14,17 +14,14 @@
 </template>
 
 <script>
-    import NavigationDrawer from "../components/NavigationDrawer";
     import MythListComponent from "../components/MythListComponent";
-    import {axios} from 'axios';
     import {primitiveMyth} from '../js/primitive';
 
     export default {
         name: "MythList",
-        components: {MythListComponent, NavigationDrawer},
+        components: {MythListComponent},
         data() {
             return {
-                drawer: false,
                 type: '',
                 mythList: [],
                 titleMap: {

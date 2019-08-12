@@ -7,6 +7,7 @@ import Myth from './views/Myth.vue'
 import MythList from './views/MythList.vue'
 import MythDetail from './views/MythDetail.vue'
 import BookList from './views/BookList.vue'
+import ChapterMyth from "./views/ChapterMyth";
 
 Vue.use(Router)
 
@@ -18,6 +19,7 @@ export default new Router({
             name: 'myth',
             component: Myth,
             meta: {
+                keepAlive: true,
                 title: "夸父-神话故事"
             }
         },
@@ -25,8 +27,8 @@ export default new Router({
             path: '/wiki',
             name: 'wiki',
             component: Wiki,
-            meta:{
-                keepAlive:true,
+            meta: {
+                keepAlive: true,
                 title: "夸父-神话百科"
             }
         },
@@ -34,6 +36,11 @@ export default new Router({
             path: '/myth/list',
             name: 'myth-list',
             component: MythList
+        },
+        {
+            path: '/myth/chapters',
+            name: 'chaptermyth',
+            component: ChapterMyth
         },
         {
             path: '/myth/detail',

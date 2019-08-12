@@ -73,16 +73,16 @@
                     </p>
                 </v-card-text>
             </v-card>
-            <v-overlay :value="showProgressing" opacity="0.1">
-                <v-progress-circular
-                        :size="30"
-                        width="3"
-                        color="primary"
-                        indeterminate
-                ></v-progress-circular>
-            </v-overlay>
-
         </v-dialog>
+
+        <v-overlay :value="showProgressing" opacity="0.1">
+            <v-progress-circular
+                    :size="30"
+                    width="3"
+                    color="primary"
+                    indeterminate
+            ></v-progress-circular>
+        </v-overlay>
     </div>
 </template>
 

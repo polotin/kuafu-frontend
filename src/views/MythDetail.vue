@@ -11,7 +11,7 @@
             <v-container>
                 <v-card>
                     <v-card-title style="color: dodgerblue;margin-top: 10px;">{{myth.title}}</v-card-title>
-                    <v-card-text v-html="myth.content" style="margin-top: 5px;"></v-card-text>
+                    <v-card-text v-html="myth.content" style="margin-top: 5px; text-align: justify; text-indent: 2em;"></v-card-text>
                 </v-card>
             </v-container>
         </v-content>

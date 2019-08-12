@@ -17,7 +17,7 @@
             <v-card width="95%" @click.stop="showMythList(node.type)">
                 <!--:color="nodeColors[nodeIndex/nodeColors.length]"-->
                 <v-card-title class="headline">{{node.title}}</v-card-title>
-                <v-card-text>
+                <v-card-text style="text-align: justify; text-indent: 2em;">
                     {{node.intro}}
                 </v-card-text>
             </v-card>

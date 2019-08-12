@@ -60,12 +60,6 @@
                             text
                             color="deep-purple accent-4"
                     >
-                        Read
-                    </v-btn>
-                    <v-btn
-                            text
-                            color="deep-purple accent-4"
-                    >
                         Bookmark
                     </v-btn>
                     <v-spacer></v-spacer>

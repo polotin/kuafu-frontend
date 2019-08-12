@@ -40,11 +40,11 @@
                     {{currentPoem.Dynasty}}·{{currentPoem.Author}}
                 </p>
                 <v-divider></v-divider>
-                <v-container style="margin-top: 10px; padding: 12px 0;">
+                <v-container style="margin-top: 10px; padding: 12px 0;" @click.stop="showTranslations">
                     <p v-for="(clause, index) in currentPoem.Clauses" :key="index" class="card-clause">
                         <span v-html="clause"></span>
                         <br>
-                        <span v-text="currentPoem.Pinyins[index]" class="pinyin"></span>
+                        <span v-if="translations" v-text="currentPoem.Pinyins[index]" class="pinyin"></span>
                     </p>
                 </v-container>
             </v-card>
@@ -79,7 +79,8 @@
                 dialog: false,
                 currentPoem: {},
                 showProgressing: false,
-                showCard: true
+                showCard: true,
+                translations: false,
             }
         },
         methods: {
@@ -112,6 +113,9 @@
                 let self = this;
                 self.currentPoem = poem;
                 self.dialog = true;
+            },
+            showTranslations() {
+                this.translations = !this.translations;
             }
         }
     }
@@ -134,7 +138,6 @@
     .card-clause {
         width: 100%;
         text-align: center;
-        font-weight: bold;
     }
 
     .pinyin{

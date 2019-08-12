@@ -35,14 +35,16 @@
         <v-dialog v-model="dialog" width="100%">
             <v-card scrollable min-height="100%" style="padding: 6px 16px">
                 <p style="height: 10px"></p>
-                <p class="title text--primary card-title">{{currentPoem.Title}}</p>
+                <p class="card-title">{{currentPoem.Title}}</p>
                 <p class="card-author">
-                    {{currentPoem.Dynasty}}<span style="color: dodgerblue;">·{{currentPoem.Author}}</span>
+                    {{currentPoem.Dynasty}}·{{currentPoem.Author}}
                 </p>
                 <v-divider></v-divider>
-                <v-container style="margin-top: 10px">
+                <v-container style="margin-top: 10px; padding: 12px 0;">
                     <p v-for="(clause, index) in currentPoem.Clauses" :key="index" class="card-clause">
                         <span v-html="clause"></span>
+                        <br>
+                        <span v-text="currentPoem.Pinyins[index]" class="pinyin"></span>
                     </p>
                 </v-container>
             </v-card>
@@ -110,18 +112,6 @@
                 let self = this;
                 self.currentPoem = poem;
                 self.dialog = true;
-            },
-            toAuthorInfo() {
-                let self = this;
-                let chName = self.currentPoem.Author;
-                self.$router
-                    .push({
-                        path: '/author',
-                        name: 'author',
-                        params: {
-                            chName: chName
-                        }
-                    });
             }
         }
     }
@@ -132,6 +122,8 @@
         width: 100%;
         text-align: center;
         white-space: normal;
+        font-weight: bold;
+        font-size: 1.2em;
     }
 
     .card-author {
@@ -142,5 +134,12 @@
     .card-clause {
         width: 100%;
         text-align: center;
+        font-weight: bold;
+    }
+
+    .pinyin{
+        text-align: center;
+        font-family: "Songti SC", serif;
+        color: #1e90ff;
     }
 </style>

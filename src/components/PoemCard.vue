@@ -27,7 +27,7 @@
                         <p>明明暗暗，惟时何为？</p>
                         <p>阴阳三合，何本何化？</p>
                         <p>圜则九重，孰营度之？</p>
-                        <p>惟兹何功。孰初作之？</p>
+                        <p>惟兹何功，孰初作之？</p>
                     </v-card-text>
                     <v-card-text v-else class="tian-wen-trans">
                         <p>邃古之初，谁传道之？</p>
@@ -44,7 +44,7 @@
                         <div class="translat">阴阳二气，渗合而生，他们的来历又从何处？</div>
                         <p>圜则九重，孰营度之？</p>
                         <div class="translat">穹窿的天盖共有九层，是谁动手经营？</div>
-                        <p>惟兹何功。孰初作之？</p>
+                        <p>惟兹何功，孰初作之？</p>
                         <div class="translat">这样一个工程，何等伟大，谁个是最初的工人?</div>
                     </v-card-text>
                 </div>

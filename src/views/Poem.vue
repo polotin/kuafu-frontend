@@ -10,7 +10,7 @@
 
         <v-app-bar app dense dark>
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>词 韵</v-toolbar-title>
+            <v-toolbar-title>诗 词</v-toolbar-title>
         </v-app-bar>
 
         <v-content>

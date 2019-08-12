@@ -19,7 +19,7 @@
             <v-card width="100%">
                 <v-card-text>
                     <div></div>
-                    <p class="title text--primary">{{poem.Title}}</p>
+                    <p class="card-title-list">{{poem.Title}}</p>
                     <p>[{{poem.Dynasty}}] {{poem.Author}}</p>
                     <p>
                         <span v-for="(clause, clauseIndex) in poem.Clauses" :key="clauseIndex">
@@ -122,6 +122,13 @@
 </script>
 
 <style scoped>
+    .card-title-list {
+        color: rgba(0, 0, 0, 0.87);
+        white-space: normal;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
     .card-title {
         width: 100%;
         text-align: center;
@@ -140,7 +147,7 @@
         text-align: center;
     }
 
-    .pinyin{
+    .pinyin {
         text-align: center;
         font-family: "Songti SC", serif;
         color: #1e90ff;

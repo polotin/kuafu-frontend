@@ -19,16 +19,18 @@
                 </v-card>
             </v-container>
         </v-content>
+        <back-totop></back-totop>
     </v-app>
 </template>
 
 <script>
     import {allChapter} from '../js/chapters';
     import ChapterMythComponent from "../components/ChapterMythComponent";
+    import BackTotop from "../components/BackTotop";
 
     export default {
         name: "ChapterMyth",
-        components: {ChapterMythComponent},
+        components: {BackTotop, ChapterMythComponent},
         data() {
             return {
                 chapter: '',

@@ -56,9 +56,20 @@
                     </v-list-item-content>
                 </v-list-item>
                 <v-divider></v-divider>
+<!--                <v-card-text style="text-align: justify; text-indent: 2em;">-->
+<!--                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">-->
+<!--                        {{paragraph}}-->
+<!--                    </p>-->
+<!--                </v-card-text>-->
                 <v-card-text style="text-align: justify; text-indent: 2em;">
-                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">
-                        {{paragraph}}
+                    <p v-for="(summary, index) in wiki.summary" :key="index" class="wiki-summary">
+                        <span v-show="false">{{sIndex = 0}}</span>
+                        <span v-for="(piece, pIndex) in summary.pieces" :key="pIndex">
+                            <span v-if="piece != '#'">
+                                {{piece}}
+                            </span>
+                            <span v-else style="color: dodgerblue" @click="showBook">《{{summary.books[sIndex++]}}》</span>
+                        </span>
                     </p>
                 </v-card-text>
             </v-card>
@@ -121,6 +132,17 @@
                         self.showProgressing = false;
                         console.log(e);
                     })
+            },
+            showBook(e) {
+                let self = this;
+                self.$router
+                    .push({
+                        path: '/books',
+                        name: 'books',
+                        query: {
+                            bookName: e.target.innerText.replace('《','').replace('》','').trim()
+                        }
+                    });
             }
         }
     }

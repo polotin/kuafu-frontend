@@ -1,8 +1,8 @@
 <template>
     <v-tabs grow>
-        <v-tab key="tab-timeline">时间线</v-tab>
-        <v-tab key="tab-classify">分类</v-tab>
-        <v-tab key="tab-other">其他</v-tab>
+        <v-tab key="tab-timeline">神话史</v-tab>
+        <v-tab key="tab-classify">篇章</v-tab>
+        <v-tab key="tab-other">故事</v-tab>
         <v-tab-item key="tab-timeline">
             <myth-timeline/>
         </v-tab-item>

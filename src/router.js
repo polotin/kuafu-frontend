@@ -16,14 +16,18 @@ export default new Router({
         {
             path: '/',
             name: 'myth',
-            component: Myth
+            component: Myth,
+            meta: {
+                title: "夸父-神话故事"
+            }
         },
         {
             path: '/wiki',
             name: 'wiki',
             component: Wiki,
             meta:{
-                keepAlive:true
+                keepAlive:true,
+                title: "夸父-神话百科"
             }
         },
         {
@@ -39,12 +43,18 @@ export default new Router({
         {
             path: '/poem',
             name: 'poem',
-            component: Poem
+            component: Poem,
+            meta: {
+                title: "夸父-诗词中的中国神话"
+            }
         },
         {
             path: '/chart',
             name: 'chart',
-            component: Chart
+            component: Chart,
+            meta: {
+                title: "夸父-神话人物关系图谱"
+            }
         },
         {
             path: '/books',

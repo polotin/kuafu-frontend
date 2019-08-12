@@ -171,72 +171,80 @@ let allChapter = {
         },
         {
             "id": "100002",
-            "chapter": 6,
-            "title": "第六章",
+            "chapter": 5,
+            "title": "第五章",
             "content":
                 [
                     {
-                        "title": "屈原天问里提出的问题",
+                        "title": "伏羲的后代",
                         "content": placeholdertext
                     },
                     {
-                        "title": "混沌给儵忽凿了七窍",
+                        "title": "廪君和四族人作斗争",
                         "content": placeholdertext
                     },
                     {
-                        "title": "阴阳二神经营天地",
+                        "title": "掷剑",
                         "content": placeholdertext
                     },
                     {
-                        "title": "巨灵“造山川，出江河”",
+                        "title": "坐雕花土船",
                         "content": placeholdertext
                     },
                     {
-                        "title": "钟山的烛龙神",
+                        "title": "盐水女神虫阵的包围",
                         "content": placeholdertext
                     },
                     {
-                        "title": " “人日”的由来",
+                        "title": "廪君射盐神",
                         "content": placeholdertext
                     },
                     {
-                        "title": "屈原天问里提出的问题",
+                        "title": "廪君建立夷城",
                         "content": placeholdertext
                     }
                 ]
         },
         {
             "id": "100002",
-            "chapter": 7,
-            "title": "第七章",
+            "chapter": 6,
+            "title": "第六章",
             "content":
                 [
                     {
-                        "title": "屈原天问里提出的问题",
+                        "title": "女娲抟黄土造人",
                         "content": placeholdertext
                     },
                     {
-                        "title": "混沌给儵忽凿了七窍",
+                        "title": "女娲建立婚姻制度",
                         "content": placeholdertext
                     },
                     {
-                        "title": "阴阳二神经营天地",
+                        "title": "神庙前的欢乐盛会",
                         "content": placeholdertext
                     },
                     {
-                        "title": "巨灵“造山川，出江河”",
+                        "title": "宇宙发生的一场大变动",
                         "content": placeholdertext
                     },
                     {
-                        "title": "钟山的烛龙神",
+                        "title": "“女娲补天”",
                         "content": placeholdertext
                     },
                     {
-                        "title": " “人日”的由来",
+                        "title": "“黄金时代”的上古来",
                         "content": placeholdertext
                     },
                     {
-                        "title": "屈原天问里提出的问题",
+                        "title": "笙簧、芦笙和“跳月”",
+                        "content": placeholdertext
+                    },
+                    {
+                        "title": "栗广之野的十个神人",
+                        "content": placeholdertext
+                    },
+                    {
+                        "title": "女娲的隐退",
                         "content": placeholdertext
                     }
                 ]

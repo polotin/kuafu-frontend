@@ -9,7 +9,7 @@ import MythDetail from './views/MythDetail.vue'
 import BookList from './views/BookList.vue'
 import ChapterMyth from "./views/ChapterMyth";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     mode: 'history',

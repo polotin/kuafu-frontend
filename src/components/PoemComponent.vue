@@ -33,10 +33,11 @@
         </v-container>
 
         <v-dialog v-model="dialog" width="100%">
-            <v-card scrollable min-height="100%">
+            <v-card scrollable min-height="100%" style="padding: 6px 16px">
                 <p style="height: 10px"></p>
                 <p class="title text--primary card-title">{{currentPoem.Title}}</p>
-                <p class="card-author"><span style="color: dodgerblue;">{{currentPoem.Author}}</span>·{{currentPoem.Dynasty}}
+                <p class="card-author">
+                    {{currentPoem.Dynasty}}<span style="color: dodgerblue;">·{{currentPoem.Author}}</span>
                 </p>
                 <v-divider></v-divider>
                 <v-container style="margin-top: 10px">
@@ -130,6 +131,7 @@
     .card-title {
         width: 100%;
         text-align: center;
+        white-space: normal;
     }
 
     .card-author {

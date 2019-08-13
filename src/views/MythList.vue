@@ -16,6 +16,10 @@
 <script>
     import MythListComponent from "../components/MythListComponent";
     import {primitiveMyth} from '../js/primitive';
+    import {shanhaiching1Myth} from '../js/shanhaiching-1';
+    import {shanhaiching2Myth} from '../js/shanhaiching-2';
+    import {preqinMyth} from '../js/preqin';
+    import {hanMyth} from '../js/han';
 
     export default {
         name: "MythList",

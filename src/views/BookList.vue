@@ -4,24 +4,30 @@
             <v-app-bar-nav-icon @click.stop="goBack">
                 <v-icon>mdi-arrow-left</v-icon>
             </v-app-bar-nav-icon>
-            <v-toolbar-title>{{bookName}}</v-toolbar-title>
+            <v-toolbar-title>找到以下关于《{{bookName}}》的藏书</v-toolbar-title>
         </v-app-bar>
 
         <v-content>
             <p v-if="noBook">{{tip}}</p>
             <v-container v-else>
-                <v-card v-for="(book, index) in bookList" :key="index" width="100%" style="margin-top: 10px;"
-                        @click="showLibraryPage(book.bid)">
-                    <v-card-title>
+                <v-card v-for="(book, index) in bookList" :key="index" width="100%" style="margin-top: 10px;">
+                    <v-card-title style="font-size: 1em; font-weight: bold" @click="showLibraryPage(book.bid)">
                         {{book.title}}
+                        <v-icon
+                                small
+                                right
+                        >
+                            mdi-open-in-new
+                        </v-icon>
                     </v-card-title>
                     <v-card-text>
-                        <p>
-                            {{book.provision}}
-                        </p>
-                        <p>
+                        <span>
                             {{book.response}}
-                        </p>
+                        </span>
+                        <br>
+                        <span>
+                           {{book.provision}}
+                        </span>
                     </v-card-text>
                 </v-card>
             </v-container>

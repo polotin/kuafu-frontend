@@ -66,7 +66,10 @@ export default new Router({
         {
             path: '/books',
             name: 'books',
-            component: BookList
+            component: BookList,
+            meta: {
+                title: "夸父-上海图书馆相关藏书"
+            }
         }
     ]
 })

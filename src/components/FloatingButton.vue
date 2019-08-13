@@ -52,7 +52,7 @@
             >
                 <v-list-item>
                     <v-list-item-content>
-                        <v-list-item-title class="headline">{{wiki.title}}</v-list-item-title>
+                        <v-list-item-title style="font-size: 1.25em;">{{wiki.title}}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-divider></v-divider>

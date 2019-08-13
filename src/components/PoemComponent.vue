@@ -167,11 +167,11 @@
                                 self.result.push(p);
                             });
                             self.onLoading = false;
-                            self.showProgressing = false;
+                            self.bottomProgress = false;
                         })
                         .catch(e => {
                             self.onLoading = false;
-                            self.showProgressing = false;
+                            self.bottomProgress = false;
                             console.log(e);
                         });
                 }

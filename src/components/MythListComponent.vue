@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-card v-for="(myth, index) in mythList" :key="index" style="margin-top: 10px;" @click.stop="showMythDetail(myth.id)">
-            <v-card-title class="headline">{{myth.title}}</v-card-title>
+            <v-card-title style="font-size: 1.25em">{{myth.title}}</v-card-title>
             <v-card-text style="text-align: justify; text-indent: 2em;">
                 {{myth.intro}}
             </v-card-text>

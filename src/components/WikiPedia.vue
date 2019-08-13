@@ -3,7 +3,8 @@
         <v-container>
             <v-layout wrap>
                 <v-flex xs9>
-                    <v-text-field placeholder="请输入查询内容" v-model="keyword" style="width: 95%;" @click.stop="showSearchSuggestions"></v-text-field>
+                    <v-text-field placeholder="请输入查询内容" v-model="keyword" style="width: 95%;"
+                                  @click.stop="showSearchSuggestions"></v-text-field>
                 </v-flex>
                 <v-flex xs3>
                     <v-btn @click.stop="findWiki" style="width: 100%; bottom: -10px;" color="primary">搜索</v-btn>
@@ -50,7 +51,8 @@
                             <span v-if="piece != '#'">
                                 {{piece}}
                             </span>
-                            <span v-else style="color: dodgerblue" @click="showBook">《{{summary.books[sIndex++]}}》</span>
+                            <span v-else style="color: dodgerblue"
+                                  @click="showBook">《{{summary.books[sIndex++]}}》</span>
                         </span>
                     </p>
                 </v-card-text>
@@ -119,6 +121,9 @@
                     keyword: self.keyword
                 })
                     .then(res => {
+                        if (res.data === "ERROR") {
+                            alert(res.data + "，请重新输入/选择查询内容！");
+                        }
                         self.wiki = res.data;
                         self.$store.state.wiki = self.wiki;
                         self.showProgressing = false;
@@ -135,7 +140,7 @@
                         path: '/books',
                         name: 'books',
                         query: {
-                            bookName: e.target.innerText.replace('《','').replace('》','').trim()
+                            bookName: e.target.innerText.replace('《', '').replace('》', '').trim()
                         }
                     });
             }

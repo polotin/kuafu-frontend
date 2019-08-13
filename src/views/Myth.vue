@@ -21,6 +21,7 @@
 <script>
     import NavigationDrawer from "../components/NavigationDrawer";
     import MythComponent from "../components/MythComponent";
+
     export default {
         name: "Myth",
         components: {MythComponent, NavigationDrawer},
@@ -28,6 +29,9 @@
             return {
                 drawer: false
             }
+        },
+        created: function () {
+            alert("此部分所引用的神话数据库有待完善");
         },
         methods: {
             hideIfNotLeave() {

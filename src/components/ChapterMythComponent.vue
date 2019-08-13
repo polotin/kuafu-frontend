@@ -23,22 +23,12 @@
             >
                 <v-list-item>
                     <v-list-item-content>
-                        <v-list-item-title class="headline">{{astory.title}}</v-list-item-title>
+                        <v-list-item-title style="font-size: 1.25em">{{astory.title}}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-divider></v-divider>
-                <v-card-text style="text-align: justify; text-indent: 2em;">
-<!--                    <p v-for="(summary, index) in wiki.summary" :key="index" class="wiki-summary">-->
-<!--                        <span v-show="false">{{sIndex = 0}}</span>-->
-<!--                        <span v-for="(piece, pIndex) in summary.pieces" :key="pIndex">-->
-<!--                            <span v-if="piece != '#'">-->
-<!--                                {{piece}}-->
-<!--                            </span>-->
-<!--                            <span v-else style="color: dodgerblue"-->
-<!--                                  @click="showBook">《{{summary.books[sIndex++]}}》</span>-->
-<!--                        </span>-->
-<!--                    </p>-->
-                    <p>{{astory.content}}</p>
+                <v-card-text style="text-align: justify; text-indent: 2em; height: 400px">
+                    <p v-html="astory.content"></p>
                 </v-card-text>
             </v-card>
         </v-dialog>

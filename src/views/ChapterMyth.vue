@@ -54,15 +54,15 @@
                 case "kai-pi":
                     self.mythListInChapter = allChapter['kai-pi'];
                     break;
-                case "huang-yan":
-                    self.mythListInChapter = allChapter['huang-yan'];
-                    break;
-                case "yao-shun":
-                    self.mythListInChapter = allChapter['yao-shun'];
-                    break;
-                case "yi-yu":
-                    self.mythListInChapter = allChapter['yi-yu'];
-                    break;
+                // case "huang-yan":
+                //     self.mythListInChapter = allChapter['huang-yan'];
+                //     break;
+                // case "yao-shun":
+                //     self.mythListInChapter = allChapter['yao-shun'];
+                //     break;
+                // case "yi-yu":
+                //     self.mythListInChapter = allChapter['yi-yu'];
+                //     break;
                 default:
                     self.mythListInChapter = allChapter['kai-pi'];
             }

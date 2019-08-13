@@ -3,19 +3,18 @@
         <v-timeline-item
                 v-for="(node, nodeIndex) in nodes"
                 :key="nodeIndex"
-                large
-                color="orange"
+                fill-dot
+                :color="nodeColors[Math.round(Math.random()*(nodeColors.length-1))]"
         >
             <template v-slot:icon>
                 <span style="font-weight: bold;"
                       :style="{
-                      'font-size':(node.node.length<3?node.node.length<2?'25':'17':'10') + 'px',
+                      'font-size':(node.node.length<3?node.node.length<2?'25':'15':'10') + 'px',
                       'font-family': node.font}">
                     {{node.node}}
                 </span>
             </template>
-            <v-card width="95%" @click.stop="showMythList(node.type)"
-                :color="nodeColors[nodeIndex/nodeColors.length]">
+            <v-card width="95%" @click.stop="showMythList(node.type)">
                 <v-card-title style="font-size: 1.25em;">{{node.title}}</v-card-title>
                 <v-card-text style="text-align: justify; text-indent: 2em;">
                     {{node.intro}}

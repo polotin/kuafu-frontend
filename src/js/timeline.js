@@ -53,7 +53,7 @@ let nodes = `[
 "node":"人物",
 "title":"历史人物的神话",
 "intro":"研究神话，有一个需要予以解决的问题，就是神话人物本身性质的问题。不能简单地判定，神话人物都是虚构的。不，问题不会这样简单。",
-"font":"KaiShu"
+"font":"Song"
 },
 {
 "id": "100008",
@@ -61,7 +61,7 @@ let nodes = `[
 "node":"魏晋",
 "title":"魏晋六朝的神话（上）",
 "intro":"鲁迅《中国小说史略》第五篇“六朝之鬼神志怪书（上）”说：“中国本信巫，神仙之说盛行，汉末又大畅巫风，而鬼道愈炽；会小乘佛教亦入中土，渐见流传。凡此，皆张皇鬼神，称道灵异，故自晋讫隋，特多鬼神志怪之书。其中有出于文人者，有出于教徒者。",
-"font":"Song"
+"font":"CaoShu"
 },
 {
 "id": "100009",
@@ -69,26 +69,18 @@ let nodes = `[
 "node":"魏晋",
 "title":"魏晋六朝的神话（下）",
 "intro":"在魏晋六朝的志怪书中，晋王嘉著、梁萧绮录的《拾遗记》是别具一格的书。它把许多神话性质的东西，附托在从开辟以来“春皇庖牺”算起到西晋末年为止的历史人物身上，也算它是历史。",
-"font":"Song"
+"font":"CaoShu"
 },
 {
 "id": "100010",
-"type": "WeiJin-2",
-"node":"魏晋",
-"title":"魏晋六朝的神话（下）",
-"intro":"在魏晋六朝的志怪书中，晋王嘉著、梁萧绮录的《拾遗记》是别具一格的书。它把许多神话性质的东西，附托在从开辟以来“春皇庖牺”算起到西晋末年为止的历史人物身上，也算它是历史。",
-"font":"Song"
+"type": "Tang",
+"node":"唐五代",
+"title":"唐五代的神话",
+"intro":"中国神话发展到了唐代，便产生了一些新的变化。唐以前的神话，大体是以笔记体的形式，作朴质的记录，保存在书本上。到了唐代，其中一支还沿袭着以往的道路，以笔记体的形式记录着往古的神话和新产生的神话；而另外一支则以一些神话传说作为材料，开始有意识地写作神话小说。",
+"font":"KaiShu"
 },
 {
 "id": "100011",
-"type": "Tang",
-"node":"唐",
-"title":"唐五代的神话",
-"intro":"中国神话发展到了唐代，便产生了一些新的变化。唐以前的神话，大体是以笔记体的形式，作朴质的记录，保存在书本上。到了唐代，其中一支还沿袭着以往的道路，以笔记体的形式记录着往古的神话和新产生的神话；而另外一支则以一些神话传说作为材料，开始有意识地写作神话小说。",
-"font":"Song"
-},
-{
-"id": "100012",
 "type": "SongYuan",
 "node":"宋元",
 "title":"宋元的神话",
@@ -96,7 +88,7 @@ let nodes = `[
 "font":"Song"
 },
 {
-"id": "100013",
+"id": "100012",
 "type": "MingQing",
 "node":"明清",
 "title":"明清的神话",
@@ -104,7 +96,7 @@ let nodes = `[
 "font":"Song"
 },
 {
-"id": "100014",
+"id": "100013",
 "type": "Minjian",
 "node":"民间",
 "title":"民间流传的神话",
@@ -113,10 +105,10 @@ let nodes = `[
 }
 ]`;
 
-const nodeColors = ["red", "pink", "purple", "deep-purple",
-    "indigo", "blue", "light-blue", "cyan", "teal",
-    "green", "light-green", "lime", "amber", "orange",
-    "deep-orange", "brown", "blue-grey", "grey"];
+const nodeColors = ["red lighten-1", "pink lighten-1", "purple lighten-2", "deep-purple lighten-3",
+    "indigo lighten-1", "blue lighten-1", "light-blue", "cyan", "teal lighten-1",
+    "green lighten-1", "light-green", "lime lighten-1", "amber lighten-1", "orange lighten-1",
+    "deep-orange lighten-1", "blue-grey lighten-1", "grey"];
 
 export {
     nodes,

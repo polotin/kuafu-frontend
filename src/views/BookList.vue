@@ -78,7 +78,7 @@
             })
                 .then(res => {
                     let data = res.data.result;
-                    if (data.length == 0) {
+                    if (data.length === 0) {
                         self.tip = '未查询到《' + self.bookName + '》相关信息';
                         self.noBook = true;
                     } else {

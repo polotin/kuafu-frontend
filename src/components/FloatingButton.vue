@@ -56,11 +56,11 @@
                     </v-list-item-content>
                 </v-list-item>
                 <v-divider></v-divider>
-<!--                <v-card-text style="text-align: justify; text-indent: 2em;">-->
-<!--                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">-->
-<!--                        {{paragraph}}-->
-<!--                    </p>-->
-<!--                </v-card-text>-->
+                <!--                <v-card-text style="text-align: justify; text-indent: 2em;">-->
+                <!--                    <p v-for="(paragraph, index) in wiki['summary']" :key="index" class="wiki-summary">-->
+                <!--                        {{paragraph}}-->
+                <!--                    </p>-->
+                <!--                </v-card-text>-->
                 <v-card-text style="text-align: justify; text-indent: 2em;">
                     <p v-for="(summary, index) in wiki.summary" :key="index" class="wiki-summary">
                         <span v-show="false">{{sIndex = 0}}</span>
@@ -68,7 +68,8 @@
                             <span v-if="piece != '#'">
                                 {{piece}}
                             </span>
-                            <span v-else style="color: dodgerblue" @click="showBook">《{{summary.books[sIndex++]}}》</span>
+                            <span v-else style="color: dodgerblue"
+                                  @click="showBook">《{{summary.books[sIndex++]}}》</span>
                         </span>
                     </p>
                 </v-card-text>
@@ -126,7 +127,9 @@
                         let data = res.data;
                         self.wiki = data;
                         self.showProgressing = false;
-                        console.log(data);
+                        if (data === "ERROR") {
+                            alert(data + "，请重新输入/选择查询内容！");
+                        }
                     })
                     .catch(e => {
                         self.showProgressing = false;
@@ -140,7 +143,7 @@
                         path: '/books',
                         name: 'books',
                         query: {
-                            bookName: e.target.innerText.replace('《','').replace('》','').trim()
+                            bookName: e.target.innerText.replace('《', '').replace('》', '').trim()
                         }
                     });
             }

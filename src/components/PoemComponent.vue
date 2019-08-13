@@ -130,6 +130,9 @@
                     page: self.page
                 })
                     .then(res => {
+                        if (res.data === "ERROR") {
+                            alert(res.data + "，请重新输入/选择查询内容！");
+                        }
                         let data = res.data;
                         self.result = data.result;
                         self.showProgressing = false;
@@ -162,6 +165,9 @@
                         page: ++self.page
                     })
                         .then(res => {
+                            if (res.data === "ERROR") {
+                                alert(res.data + "，请重新输入/选择查询内容！");
+                            }
                             let data = res.data;
                             data.result.forEach(p=>{
                                 self.result.push(p);

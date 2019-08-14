@@ -48,7 +48,7 @@
                 myth: {title: '', content: ''}
             }
         },
-        mounted() {
+        created() {
             let self = this;
             self.type = self.$route.query.type;
             self.id = self.$route.query.id;

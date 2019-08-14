@@ -37,7 +37,7 @@
                 }
             }
         },
-        mounted() {
+        created() {
             let self = this;
             self.type = self.$route.query.type;
 

@@ -37,7 +37,7 @@
                 nodeColors: []
             }
         },
-        mounted() {
+        created() {
             let url = 'https://www.kuafu.online/mythnstory';
             axios.post(url, {
                 keyword: "timeline",

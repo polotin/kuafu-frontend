@@ -89,7 +89,7 @@
 
         </v-list>
         <v-footer absolute>
-            <div>&copy; {{ new Date().getFullYear() }} <a @click="openInNewTab('lib')">上图开放数据应用开发竞赛</a></div>
+            <div style="font-size: 13px">&copy; {{ new Date().getFullYear() }} <a @click="openInNewTab('lib')">上海图书馆开放数据应用开发竞赛</a></div>
         </v-footer>
     </v-container>
 </template>

@@ -24,7 +24,6 @@
     </v-timeline>
 </template>
 <script>
-    // import {nodes, nodeColors} from '../js/timeline';
     import BackTotop from "./BackTotop";
     import axios from 'axios';
 

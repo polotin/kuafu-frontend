@@ -41,14 +41,17 @@
                     indeterminate
             ></v-progress-circular>
         </v-overlay>
+        <back-totop></back-totop>
     </v-app>
 </template>
 
 <script>
     import axios from 'axios';
+    import BackTotop from "../components/BackTotop";
 
     export default {
         name: "BookList",
+        components: {BackTotop},
         data() {
             return {
                 bookName: '',

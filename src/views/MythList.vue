@@ -10,20 +10,18 @@
         <v-content>
             <myth-list-component :mythList="mythList"/>
         </v-content>
+        <back-totop></back-totop>
     </v-app>
 </template>
 
 <script>
     import MythListComponent from "../components/MythListComponent";
-    import {primitiveMyth} from '../js/primitive';
-    import {shanhaiching1Myth} from '../js/shanhaiching-1';
-    import {shanhaiching2Myth} from '../js/shanhaiching-2';
-    import {preqinMyth} from '../js/preqin';
-    import {hanMyth} from '../js/han';
+    import axios from 'axios';
+    import BackTotop from "../components/BackTotop";
 
     export default {
         name: "MythList",
-        components: {MythListComponent},
+        components: {BackTotop, MythListComponent},
         data() {
             return {
                 type: '',
@@ -39,24 +37,29 @@
                 }
             }
         },
+        mounted() {
+            let self = this;
+            self.type = self.$route.query.type;
+
+            let url = 'https://www.kuafu.online/mythnstory';
+            axios.post(url, {
+                keyword: self.type,
+            })
+                .then(res => {
+                    if (res.data === "ERROR") {
+                        alert(res.data);
+                    }
+                    self.mythList = res.data.nodes;
+                })
+                .catch(e => {
+                    console.log(e);
+                })
+        },
         methods: {
             goBack() {
                 this.$router.go(-1);
             }
         },
-        created() {
-            let self = this;
-            self.type = self.$route.query.type;
-            // let url = '' + '?type=' + self.type;
-            // axios.get(url)
-            //     .then(res=> {
-            //         let data = res.data;
-            //         self.mythList = data;
-            //     });
-            if (self.type == 'Primitive') {
-                self.mythList = primitiveMyth;
-            }
-        }
     }
 </script>
 

@@ -4,7 +4,7 @@
             <v-app-bar-nav-icon @click.stop="goBack">
                 <v-icon>mdi-arrow-left</v-icon>
             </v-app-bar-nav-icon>
-            <v-toolbar-title>找到以下关于《{{bookName}}》的藏书</v-toolbar-title>
+            <v-toolbar-title style="font-size: 1em">找到以下关于《{{bookName}}》的藏书</v-toolbar-title>
         </v-app-bar>
 
         <v-content>

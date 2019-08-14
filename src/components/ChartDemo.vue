@@ -63,7 +63,7 @@
             let categories = [];
             for (let i = 0; i < 9; i++) {
                 categories[i] = {
-                    name: '类目' + i
+                    name: '类' + i
                 };
             }
             graph.nodes.forEach(function (node) {

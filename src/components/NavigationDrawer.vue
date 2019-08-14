@@ -9,7 +9,7 @@
                     夸 父（KUAFU）
                 </v-list-item-title>
                 <v-list-item-subtitle>
-                   <a @click="openInNewTab('github')">@ Github</a>
+                    <a @click="openInNewTab('github')">@ Github</a>
                 </v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
@@ -52,7 +52,7 @@
                         <v-icon>mdi-google-circles-extended</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>关系图</v-list-item-title>
+                        <v-list-item-title>关 系 图</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list-item-group>
@@ -88,7 +88,9 @@
             </v-list-item>
 
         </v-list>
-
+        <v-footer absolute>
+            <div>&copy; {{ new Date().getFullYear() }} <a @click="openInNewTab('lib')">上图开放数据应用开发竞赛</a></div>
+        </v-footer>
     </v-container>
 </template>
 
@@ -99,9 +101,8 @@
             return {}
         },
         methods: {
-            openInNewTab(para){
-                switch(para)
-                {
+            openInNewTab(para) {
+                switch (para) {
                     case "github":
                         window.open("https://github.com/polotin/kuafu-frontend");
                         break;
@@ -111,9 +112,11 @@
                     case "book2":
                         window.open("https://book.douban.com/subject/7014927/");
                         break;
-                    case"book3":
+                    case "book3":
                         window.open("https://book.douban.com/subject/30434560/");
                         break;
+                    case "lib":
+                        window.open("http://opendata.library.sh.cn/");
                 }
 
             }
@@ -122,7 +125,7 @@
 </script>
 
 <style scoped>
-.v-list-item__subtitle{
-    margin-bottom: 5px;
-}
+    .v-list-item__subtitle {
+        margin-bottom: 5px;
+    }
 </style>

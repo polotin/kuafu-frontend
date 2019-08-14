@@ -16,8 +16,7 @@
             </template>
             <v-card width="95%" @click.stop="showMythList(node.type)">
                 <v-card-title style="font-size: 1.25em;">{{node.title}}</v-card-title>
-                <v-card-text style="text-align: justify; text-indent: 2em;">
-                    {{node.intro}}
+                <v-card-text style="text-align: justify; text-indent: 2em;" v-html="node.intro">
                 </v-card-text>
             </v-card>
         </v-timeline-item>
@@ -25,8 +24,10 @@
     </v-timeline>
 </template>
 <script>
-    import {nodes, nodeColors} from '../js/timeline';
+    // import {nodes, nodeColors} from '../js/timeline';
     import BackTotop from "./BackTotop";
+    import axios from 'axios';
+
 
     export default {
         name: "MythTimeline",
@@ -38,8 +39,21 @@
             }
         },
         mounted() {
-            this.nodes = JSON.parse(nodes);
-            this.nodeColors = nodeColors;
+            let url = 'https://www.kuafu.online/mythnstory';
+            axios.post(url, {
+                keyword: "timeline",
+            })
+                .then(res => {
+                    if (res.data === "ERROR") {
+                        alert(res.data);
+                    }
+                    let data = res.data;
+                    this.nodes = data.nodes;
+                    this.nodeColors = data.nodeColors;
+                })
+                .catch(e => {
+                    console.log(e);
+                })
         },
         methods: {
             showMythList(type) {
